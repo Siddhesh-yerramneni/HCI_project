@@ -40,13 +40,13 @@ export default function Home() {
               Apply easily, track your applications, and get timely feedback on your status.
             </p>
           </Link>
-          <Link className="bg-black p-6 rounded-lg shadow-md text-center">
+          <Link to='/pl' className="bg-black p-6 rounded-lg shadow-md text-center">
             <h3 className="text-xl font-semibold text-white mb-2">I'm a professor</h3>
             <p className="text-white">
               Review applications, filter candidates, and rank potential TAs.
             </p>
           </Link>
-          <Link className="bg-black p-6 rounded-lg shadow-md text-center">
+          <Link to='/al' className="bg-black p-6 rounded-lg shadow-md text-center">
             <h3 className="text-xl font-semibold text-white mb-2">I'm an admin</h3>
             <p className="text-white">
               Manage courses, view preferences, and assign TAs easily.
@@ -54,7 +54,6 @@ export default function Home() {
           </Link>
         </section>
       </main>
-
       {/* Footer */}
       <footer className="w-full bg-black text-white py-3 text-center">
         <p>© 2024 University of Florida. All rights reserved.</p>

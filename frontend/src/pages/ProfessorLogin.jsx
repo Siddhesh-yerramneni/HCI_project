@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa'; // Import icons
-export default function AdminLogin() {
+export default function ProfessorLogin() {
     return (
         <div className="min-h-screen flex flex-col relative">
           {/* Left Arrow */}
@@ -34,7 +34,7 @@ export default function AdminLogin() {
           {/* Main Content */}
           <div className='flex-grow items-center justify-center bg-zinc-200'>
             <main className="flex flex-col flex-grow items-center mt-24 text-center">
-              <h2 className="text-2xl font-semibold mb-6">Logging in as Admin</h2>
+              <h2 className="text-2xl font-semibold mb-6">Logging in as Professor</h2>
               <div className='grid grid-rows-2 gap-6 w-1/3'>
                 <div className='flex flex-row gap-2 items-center text-xl'>
                   <label className='text-xl font-semibold rounded p-3 w-1/3 '>E-mail</label>
