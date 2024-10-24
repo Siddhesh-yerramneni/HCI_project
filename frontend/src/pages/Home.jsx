@@ -6,14 +6,17 @@ export default function Home() {
       {/* Header */}
       <header className="w-full bg-black py-3 shadow-md flex justify-between items-center px-8">
         <div className="flex items-center">
+          <Link to='/'>
           <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-7DjAZZLWBGma-Vm01k1yr2ErdOngnGFEJg&s"
            alt="University Logo" className="h-12 w-12 mr-4" />
+          </Link>
           <div>
             <h1 className="text-2xl font-bold text-white">TA Assignment System (TAAS)</h1>
             <p className="text-md text-white">University of Florida</p>
           </div>
         </div>
         <div className="flex space-x-6">
+        <button className="text-white text-lg hover:text-blue-600 transition">Profile</button>
           <button className="text-white text-lg hover:text-blue-600 transition">About</button>
           <button className="text-white text-lg hover:text-blue-600 transition">Help</button>
           <button className="text-white text-lg hover:text-blue-600 transition">Contact</button>

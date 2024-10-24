@@ -17,8 +17,10 @@ export default function ProfessorLogin() {
           {/* Header */}
           <header className="w-full bg-black py-3 shadow-md flex justify-between items-center px-8">
             <div className="flex items-center">
-              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-7DjAZZLWBGma-Vm01k1yr2ErdOngnGFEJg&s"
-               alt="University Logo" className="h-12 w-12 mr-4" />
+                <Link to='/'>
+          <         img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-7DjAZZLWBGma-Vm01k1yr2ErdOngnGFEJg&s"
+                    alt="University Logo" className="h-12 w-12 mr-4" />
+                </Link>
               <div>
                 <h1 className="text-2xl font-bold text-white">TA Assignment System (TAAS)</h1>
                 <p className="text-md text-white">University of Florida</p>
@@ -42,7 +44,7 @@ export default function ProfessorLogin() {
                 </div>
                 <div className='flex flex-row gap-2 items-center text-xl'>
                   <label className='text-xl font-semibold rounded p-3 w-1/3 '>Password</label>
-                  <input className='border border-black rounded p-3 flex-grow' placeholder='Enter your password' type="password" />
+                  <input className='border border-black rounded p-3 flex-grow ' placeholder='Enter your password' type="password" />
                 </div>
                 <div className=''>
                   <button className="bg-black text-white py-4 px-6 rounded-full text-xl w-1/3">
