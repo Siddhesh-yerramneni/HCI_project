@@ -27,7 +27,7 @@ export default function ProfessorProfile() {
               </div>
             </div>
             <div className="flex space-x-6">
-              <button className="text-white text-lg hover:text-blue-600 transition">Siddhesh</button>
+              <button className="text-white text-lg hover:text-blue-600 transition">Logout</button>
               <button className="text-white text-lg hover:text-blue-600 transition">About</button>
               <button className="text-white text-lg hover:text-blue-600 transition">Help</button>
               <button className="text-white text-lg hover:text-blue-600 transition">Contact</button>

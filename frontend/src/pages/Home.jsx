@@ -16,7 +16,6 @@ export default function Home() {
           </div>
         </div>
         <div className="flex space-x-6">
-        <button className="text-white text-lg hover:text-blue-600 transition">Profile</button>
           <button className="text-white text-lg hover:text-blue-600 transition">About</button>
           <button className="text-white text-lg hover:text-blue-600 transition">Help</button>
           <button className="text-white text-lg hover:text-blue-600 transition">Contact</button>
