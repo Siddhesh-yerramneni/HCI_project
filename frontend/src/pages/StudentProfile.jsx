@@ -37,6 +37,38 @@ export default function StudentProfile() {
     
           {/* Main Content */}
           <span className='text-2xl text-center font-semibold text-black bg-slate-400 p-3'>Siddhesh's Profile</span>
+          <span className='text-lg text-center font-medium text-black bg-slate-400'>Welcome Siddhesh! Please keep your profile updated for better communication. Scroll down to see the current available postings to apply.</span>
+          
+          {/*Profile updated succesfully*/}
+          {/* <div class="bg-blue-100 border-t border-b border-green-700 text-green-700 px-4 py-3" role="alert">
+            <p class="font-bold text-lg text-center">Profile updated succesfully</p>
+            <p class="text-md text-center">Thank you for updating the details.</p>
+          </div> */}
+
+          {/* Cannot update the profile */}
+          {/* <div class="bg-blue-100 border-t border-b border-red-700 text-red-700 px-4 py-3" role="alert">
+            <p class="font-bold text-lg text-center">Profile update failed</p>
+            <p class="text-md text-center">Incorrect UFID. Please update the correct UFID.</p>
+          </div> */}
+
+          {/* Cannot update the profile as exceeded 20hrs */}
+          {/* <div class="bg-blue-100 border-t border-b border-red-700 text-red-700 px-4 py-3" role="alert">
+            <p class="font-bold text-lg text-center">Profile update failed</p>
+            <p class="text-md text-center">Being an international student, you are capped at 20hrs.</p>
+          </div> */}
+
+          {/* Cannot update the profile as exceeded 20hrs */}
+          <div class="bg-blue-100 border-t border-b border-red-700 text-red-700 px-4 py-3" role="alert">
+            <p class="font-bold text-lg text-center">Profile update failed</p>
+            <p class="text-md text-center">GPA has to be in range of 0-4.</p>
+          </div>
+
+          {/*Applied succesfully*/}
+          {/* <div class="bg-blue-100 border-t border-b border-green-700 text-green-700 px-4 py-3" role="alert">
+            <p class="font-bold text-lg text-center">Application sent succesfully</p>
+            <p class="text-md text-center">Thank you for applying. An update will be delivered soon!</p>
+          </div> */}
+
           <div className='flex-grow items-center justify-center bg-zinc-200'>
             <div className='flex flex-col items-center mt-4'>
                 <form className='flex flex-grow flex-col w-1/3 text-xl font-semibold p-3'>
@@ -80,12 +112,15 @@ export default function StudentProfile() {
           <div className='mb-1 flex flex-col mt-1'>
             <label>Desired number of working hours</label>
             <input type="number" className='p-2' placeholder='For internationals maximum limit is 20hours per week'/>
+          </div>
+            <div className='flex flex-col mt-3'>
+              {/* <button className='bg-gray-500 rounded-lg p-2'>Update</button> */}
+              <button className='bg-gray-500 rounded-lg p-2'>Cancel Update</button>
             </div>
                 </form>
             </div>
           </div>
-
-
+          
           <span className='text-2xl text-center font-semibold text-white bg-black p-3'>Apply for the availble courses: </span>
           <div className="overflow-x-auto">
             <table className="min-w-full border-collapse border border-slate-400">
