@@ -32,6 +32,24 @@ export default function StudentLogin() {
         </div>
       </header>
 
+      {/*Success alert */}
+          {/* <div class="bg-blue-100 border-t border-b border-green-700 text-green-700 px-4 py-3" role="alert">
+            <p class="font-bold text-lg text-center">Login Succesful!!</p>
+            <p class="text-md text-center">Taking you to the admin view in a few seconds.</p>
+          </div> */}
+
+          {/*Wrong e-mail error */}
+          {/* <div class="bg-blue-100 border-t border-b border-red-700 text-red-700 px-4 py-3" role="alert">
+            <p class="font-bold text-lg text-center">Cannot find the account</p>
+            <p class="text-md text-center">Cannot find the account associated with the entered e-mail.</p>
+          </div> */}
+
+          {/*Wrong password error */}
+          <div class="bg-blue-100 border-t border-b border-red-700 text-red-700 px-4 py-3" role="alert">
+            <p class="font-bold text-lg text-center">Login failed!!</p>
+            <p class="text-md text-center">Wrong password entered. Please try again</p>
+          </div>
+
       {/* Main Content */}
       <div className='flex-grow items-center justify-center bg-zinc-200'>
         <main className="flex flex-col flex-grow items-center mt-24 text-center">

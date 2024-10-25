@@ -36,10 +36,41 @@ export default function ProfessorProfile() {
     
           {/* Main Content */}
           <span className='text-2xl text-center font-semibold text-black bg-slate-400 p-3'>Professor's Profile</span>
+
+          {/*Cannot post error - number of people*/}
+          {/* <div class="bg-blue-100 border-t border-b border-red-700 text-red-700 px-4 py-3" role="alert">
+            <p class="font-bold text-lg text-center">Cannot post the request</p>
+            <p class="text-md text-center">People has to be greater than 1.</p>
+          </div> */}
+
+          {/* Cannot post error - number of hours */}
+          {/* <div class="bg-blue-100 border-t border-b border-red-700 text-red-700 px-4 py-3" role="alert">
+            <p class="font-bold text-lg text-center">Cannot post the request</p>
+            <p class="text-md text-center">Hours has to be greater than 1.</p>
+          </div> */}
+
+          {/*Request posted succesfully*/}
+          {/* <div class="bg-blue-100 border-t border-b border-green-700 text-green-700 px-4 py-3" role="alert">
+            <p class="font-bold text-lg text-center">Request posted</p>
+            <p class="text-md text-center">Your request is posted succesfully. An update will be delivered soon!</p>
+          </div> */}
+
+          {/*Request edited succesfully*/}
+          {/* <div class="bg-blue-100 border-t border-b border-green-700 text-green-700 px-4 py-3" role="alert">
+            <p class="font-bold text-lg text-center">Request edited succesfully</p>
+            <p class="text-md text-center">Your request is edited succesfully. An update will be delivered soon!</p>
+          </div> */}
+
+          {/*Profile updated succesfully*/}
+          <div class="bg-blue-100 border-t border-b border-green-700 text-green-700 px-4 py-3" role="alert">
+            <p class="font-bold text-lg text-center">Profile updated succesfully</p>
+            <p class="text-md text-center">Thank you for updating the details.</p>
+          </div>
+
           <div className='flex-grow items-center justify-center bg-zinc-200'>
             <div className='flex flex-col items-center mt-4'>
                 <form className='flex flex-grow flex-col w-1/3 text-xl font-semibold p-3'>
-                  <img src="https://static.vecteezy.com/system/resources/thumbnails/007/469/004/small_2x/graduated-student-in-simple-flat-personal-profile-icon-or-symbol-people-concept-illustration-vector.jpg" 
+                  <img src="https://cdn-icons-png.freepik.com/256/2798/2798310.png?semt=ais_hybrid" 
                   alt="student image" srcset="" className='h-40 w-40 rounded-full ml-44' />
                   <div className='mb-1 flex flex-col mt-2'>
                     <label className='mb-2'>Enter office location</label>
@@ -49,11 +80,15 @@ export default function ProfessorProfile() {
                     <label className='mb-2'>Enter E-mail</label>
                     <input type="email" className='p-2'/>
                   </div>
+                  <div className='flex flex-col mt-3'>
+                    {/* <button className='bg-gray-500 rounded-lg p-2'>Update</button> */}
+                    <button className='bg-gray-500 rounded-lg p-2'>Cancel Update</button>
+                  </div>
                 </form>
             </div>
           </div>
 
-          <span className='text-2xl text-center font-semibold text-white bg-black p-3'>Request for postings: </span>
+          <span className='text-2xl text-center font-semibold text-white bg-black p-3'>Your request space </span>
           <div className="overflow-x-auto">
             <table className="min-w-full border-collapse border border-slate-400">
               <thead className="bg-slate-400 font-semibold text-xl">
@@ -70,7 +105,7 @@ export default function ProfessorProfile() {
               <tbody>
                 <tr>
                   {/* Course Selection */}
-                  <td className='text-center'> 
+                  <td className='text-center border border-slate-500 p-2'> 
                     <input type="text" placeholder='CAP5100'/>
                   </td>
                   <td className="border border-slate-500 p-2">
@@ -118,9 +153,12 @@ export default function ProfessorProfile() {
                     />
                   </td>
 
-                  <td className='text-center'>
-                    <button className='bg-gray-500 rounded p-3'>
-                      Post
+                  <td className='text-center flex flex-row justify-evenly'>
+                    <button className='bg-gray-500 rounded p-3  hover:bg-blue-600'>
+                      Edit
+                    </button>
+                    <button className='bg-gray-500 rounded p-3 ml-3 hover:bg-red-600'>
+                      Delete
                     </button>
                   </td>
                 </tr>
@@ -176,9 +214,12 @@ export default function ProfessorProfile() {
                     />
                   </td>
 
-                  <td className='text-center'>
-                    <button className='bg-gray-500 rounded p-3'>
+                  <td className='text-center flex flex-row justify-evenly'>
+                  <button className='bg-gray-500 rounded p-3  hover:bg-green-600'>
                       Post
+                    </button>
+                    <button className='bg-gray-500 rounded p-3 ml-3  hover:bg-red-600'>
+                      Delete
                     </button>
                   </td>
                 </tr>
