@@ -40,10 +40,10 @@ export default function StudentProfile() {
           <span className='text-lg text-center font-medium text-black bg-slate-400'>Welcome Siddhesh! Please keep your profile updated for better communication. Scroll down to see the current available postings to apply.</span>
           
           {/*Profile updated succesfully*/}
-          {/* <div class="bg-blue-100 border-t border-b border-green-700 text-green-700 px-4 py-3" role="alert">
+          <div class="bg-blue-100 border-t border-b border-green-700 text-green-700 px-4 py-3" role="alert">
             <p class="font-bold text-lg text-center">Profile updated succesfully</p>
             <p class="text-md text-center">Thank you for updating the details.</p>
-          </div> */}
+          </div>
 
           {/* Cannot update the profile */}
           {/* <div class="bg-blue-100 border-t border-b border-red-700 text-red-700 px-4 py-3" role="alert">
@@ -58,10 +58,10 @@ export default function StudentProfile() {
           </div> */}
 
           {/* Cannot update the profile as exceeded 20hrs */}
-          <div class="bg-blue-100 border-t border-b border-red-700 text-red-700 px-4 py-3" role="alert">
+          {/* <div class="bg-blue-100 border-t border-b border-red-700 text-red-700 px-4 py-3" role="alert">
             <p class="font-bold text-lg text-center">Profile update failed</p>
             <p class="text-md text-center">GPA has to be in range of 0-4.</p>
-          </div>
+          </div> */}
 
           {/*Applied succesfully*/}
           {/* <div class="bg-blue-100 border-t border-b border-green-700 text-green-700 px-4 py-3" role="alert">
@@ -73,7 +73,7 @@ export default function StudentProfile() {
             <div className='flex flex-col items-center mt-4'>
                 <form className='flex flex-grow flex-col w-1/3 text-xl font-semibold p-3'>
                   <img src="https://static.vecteezy.com/system/resources/thumbnails/007/469/004/small_2x/graduated-student-in-simple-flat-personal-profile-icon-or-symbol-people-concept-illustration-vector.jpg" 
-                  alt="student image" srcset="" className='h-40 w-40 rounded-full ml-44' />
+                  alt="student image" srcset="" className='h-40 w-40 rounded-full ml-72' />
                   <div className="mb-1">
                   <label className="block text-black font-semibold mb-2">Semester joined:</label>
                   <select
@@ -113,6 +113,11 @@ export default function StudentProfile() {
             <label>Desired number of working hours</label>
             <input type="number" className='p-2' placeholder='For internationals maximum limit is 20hours per week'/>
           </div>
+          <div className='mb-1 flex flex-col mt-1'>
+            <label>Upload resume</label>
+            <input type="file" className='p-2'/>
+          </div>
+
             <div className='flex flex-col mt-3'>
               {/* <button className='bg-gray-500 rounded-lg p-2'>Update</button> */}
               <button className='bg-gray-500 rounded-lg p-2'>Cancel Update</button>
@@ -132,7 +137,7 @@ export default function StudentProfile() {
                   <th className="border border-slate-300 p-2">Willing to do TA?</th>
                   <th className="border border-slate-300 p-2">Preference Level</th>
                   <th className="border border-slate-300 p-2">Comments</th>
-                  <th className='border border-slate-300 p-2'>Apply</th>
+                  <th className='border border-slate-300 p-2'>Actions</th>
                 </tr>
               </thead>
               <tbody>
@@ -261,9 +266,12 @@ export default function StudentProfile() {
                     />
                   </td>
 
-                  <td>
-                    <button>
-                      Apply
+                  <td className='flex justify-center gap-4'>
+                    <button className='bg-green-500 p-3 rounded-lg'>
+                      Applied
+                    </button>
+                    <button className='bg-red-400 p-3 rounded-lg'>
+                      Revoke
                     </button>
                   </td>
                 </tr>
@@ -394,8 +402,8 @@ export default function StudentProfile() {
                     />
                   </td>
 
-                  <td>
-                    <button>
+                  <td className='flex flex-row justify-center'>
+                    <button className='bg-slate-400 p-3 rounded-lg'>
                       Apply
                     </button>
                   </td>

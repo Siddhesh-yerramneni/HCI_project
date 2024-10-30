@@ -38,10 +38,10 @@ export default function ProfessorProfile() {
           <span className='text-2xl text-center font-semibold text-black bg-slate-400 p-3'>Professor's Profile</span>
 
           {/*Cannot post error - number of people*/}
-          {/* <div class="bg-blue-100 border-t border-b border-red-700 text-red-700 px-4 py-3" role="alert">
+          <div class="bg-blue-100 border-t border-b border-red-700 text-red-700 px-4 py-3" role="alert">
             <p class="font-bold text-lg text-center">Cannot post the request</p>
             <p class="text-md text-center">People has to be greater than 1.</p>
-          </div> */}
+          </div>
 
           {/* Cannot post error - number of hours */}
           {/* <div class="bg-blue-100 border-t border-b border-red-700 text-red-700 px-4 py-3" role="alert">
@@ -62,16 +62,16 @@ export default function ProfessorProfile() {
           </div> */}
 
           {/*Profile updated succesfully*/}
-          <div class="bg-blue-100 border-t border-b border-green-700 text-green-700 px-4 py-3" role="alert">
+          {/* <div class="bg-blue-100 border-t border-b border-green-700 text-green-700 px-4 py-3" role="alert">
             <p class="font-bold text-lg text-center">Profile updated succesfully</p>
             <p class="text-md text-center">Thank you for updating the details.</p>
-          </div>
+          </div> */}
 
           <div className='flex-grow items-center justify-center bg-zinc-200'>
             <div className='flex flex-col items-center mt-4'>
                 <form className='flex flex-grow flex-col w-1/3 text-xl font-semibold p-3'>
                   <img src="https://cdn-icons-png.freepik.com/256/2798/2798310.png?semt=ais_hybrid" 
-                  alt="student image" srcset="" className='h-40 w-40 rounded-full ml-44' />
+                  alt="student image" srcset="" className='h-40 w-40 rounded-full ml-64' />
                   <div className='mb-1 flex flex-col mt-2'>
                     <label className='mb-2'>Enter office location</label>
                     <input type="text" className='p-2'/>
@@ -154,10 +154,10 @@ export default function ProfessorProfile() {
                   </td>
 
                   <td className='text-center flex flex-row justify-evenly'>
-                    <button className='bg-gray-500 rounded p-3  hover:bg-blue-600'>
-                      Edit
+                    <button className='bg-green-500 rounded p-3'>
+                      Posted
                     </button>
-                    <button className='bg-gray-500 rounded p-3 ml-3 hover:bg-red-600'>
+                    <button className='bg-red-500 rounded p-3 ml-3'>
                       Delete
                     </button>
                   </td>
@@ -215,10 +215,10 @@ export default function ProfessorProfile() {
                   </td>
 
                   <td className='text-center flex flex-row justify-evenly'>
-                  <button className='bg-gray-500 rounded p-3  hover:bg-green-600'>
+                  <button className='bg-slate-400 rounded p-3'>
                       Post
                     </button>
-                    <button className='bg-gray-500 rounded p-3 ml-3  hover:bg-red-600'>
+                    <button className='bg-red-500 rounded p-3 ml-3'>
                       Delete
                     </button>
                   </td>
