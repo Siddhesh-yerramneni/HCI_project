@@ -100,9 +100,22 @@ export default function ProfessorCourse() {
         </div>
       </header>
 
+
+
       <section>
+      
+      <div class="bg-blue-100 border-t border-b border-green-700 text-green-700 px-4 py-3 hidden" role="alert">
+            <p class="font-bold text-lg text-center">Admin has been notified that you've chosen "Sidesh Yermaneni" as a suitable candidate</p>
+            
+      </div>
+
+      <div class="bg-blue-100 border-t border-b border-green-700 text-red-700 px-4 py-3" role="alert">
+            <p class="font-bold text-lg text-center">Admin has been notified that you've rejected "Indu Pots"</p>
+            
+      </div>
+
         <div className="flex-grow items-center justify-center bg-zinc-200">
-          <div className="flex flex-col items-center mt-4">
+          <div className="flex flex-col items-center">
             <form className="flex flex-grow flex-col w-1/3 text-xl font-semibold p-3">
               <img
                 src="https://cdn-icons-png.freepik.com/256/2798/2798310.png?semt=ais_hybrid"
