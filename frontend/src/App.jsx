@@ -6,6 +6,7 @@ import AdminLogin from './pages/AdminLogin.jsx';
 import StudentProfile from './pages/StudentProfile.jsx';
 import ProfessorProfile from './pages/ProfessorProfile.jsx';
 import AdminProfile from './pages/AdminProfile.jsx';
+import ProfessorCourse from './pages/ProfessorCourse.jsx';
 
 export default function App() {
   return (
@@ -18,6 +19,7 @@ export default function App() {
         <Route path='/sp' element={<StudentProfile />}/>
         <Route path='/pp' element={<ProfessorProfile />}/>
         <Route path="/rp" element={<AdminProfile/>}/>
+        <Route path="/pc" element={<ProfessorCourse/>}/>
       </Routes>
     </BrowserRouter>
   );
