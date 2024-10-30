@@ -8,6 +8,8 @@ import ProfessorProfile from './pages/ProfessorProfile.jsx';
 import StudentApplicationManagement from './pages/StudentApplicationManagement.jsx';
 import AdminProfile from './pages/AdminProfile.jsx';
 import Adminp from './pages/Adminp.jsx';
+import ProfessorCourse from './pages/ProfessorCourse.jsx';
+import StudentApplicationManagement from './pages/StudentApplicationManagement.jsx';
 
 export default function App() {
   return (
@@ -26,3 +28,7 @@ export default function App() {
     </BrowserRouter>
   );
 }
+
+
+
+
