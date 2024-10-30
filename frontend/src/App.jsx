@@ -6,6 +6,8 @@ import AdminLogin from './pages/AdminLogin.jsx';
 import StudentProfile from './pages/StudentProfile.jsx';
 import ProfessorProfile from './pages/ProfessorProfile.jsx';
 import StudentApplicationManagement from './pages/StudentApplicationManagement.jsx';
+import AdminProfile from './pages/AdminProfile.jsx';
+
 export default function App() {
   return (
     <BrowserRouter>
