@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa"; // Import icons
-
+import { File, Download, ExternalLink } from 'lucide-react';
 export default function ProfessorCourse() {
   function handleChange() {
     return;
@@ -104,13 +104,15 @@ export default function ProfessorCourse() {
 
       <section>
       
-      <div class="bg-blue-100 border-t border-b border-green-700 text-green-700 px-4 py-3 hidden" role="alert">
-            <p class="font-bold text-lg text-center">Admin has been notified that you've chosen "Sidesh Yermaneni" as a suitable candidate</p>
+      <div className="bg-blue-100 border-t border-b border-green-700 text-green-700 px-4 py-3 hidden" role="alert">
+            <p className="font-bold text-lg text-center">Notification Sent</p>
+            <p className="font text-md text-center">Admin has been notified that you've chosen "Sidesh Yermaneni" as a suitable candidate</p>
             
       </div>
 
-      <div class="bg-blue-100 border-t border-b border-green-700 text-red-700 px-4 py-3" role="alert">
-            <p class="font-bold text-lg text-center">Admin has been notified that you've rejected "Indu Pots"</p>
+      <div className="bg-blue-100 border-t border-b border-green-700 text-green-700 px-4 py-3" role="alert">
+      <p className="font-bold text-lg text-center">Notification Sent</p>
+            <p className="font text-md text-center">Admin has been notified that you've selected  "Sidedish Yermaneni" as a suitable candidate</p>
             
       </div>
 
@@ -170,108 +172,107 @@ export default function ProfessorCourse() {
             </div>
           </div>
 
-          <div className="col-start-6 col-span-1 ml-5">
-            <div className="max-w-sm overflow-hidden rounded shadow-lg">
-              <label
-                htmlFor="countries"
-                className="mb-2 block text-md font-medium text-gray-900 dark:text-black text-center"
-              >
-                Hours
-              </label>
+          
+            <div className="col-start-5 col-span-1 ml-5 mt-7">
+              <div className="max-w-sm overflow-hidden rounded shadow-lg">
+                
 
-              <select
-                defaultValue={"DEFAULT"}
-                id="countries"
-                className="block w-full rounded-lg border border-black bg-black p-2.5 text-sm text-black focus:border-blue-500 focus:ring-blue-500 dark:border-black dark:bg-black dark:text-white dark:placeholder-white dark:focus:border-blue-500 dark:focus:ring-blue-500"
-              >
-                <option value="DEFAULT" disabled>
-                  Select an option
-                </option>
-                <option value="AD">20+</option>
-                <option value="BS">15-20</option>
-                <option value="FR">10-15</option>
-                <option value="DE">5-10</option>
-              </select>
+                <select
+                  defaultValue={"DEFAULT"}
+                  id="countries"
+                  className="block w-full rounded-lg border border-black bg-black p-2.5 text-sm text-black focus:border-blue-500 focus:ring-blue-500 dark:border-black dark:bg-black dark:text-white dark:placeholder-white dark:focus:border-blue-500 dark:focus:ring-blue-500"
+                >
+                  <option value="DEFAULT" disabled>
+                    Hours
+                  </option>
+                  <option value="AD">20+</option>
+                  <option value="BS">15-20</option>
+                  <option value="FR">10-15</option>
+                  <option value="DE">5-10</option>
+                </select>
+              </div>
             </div>
-          </div>
 
-          <div className="col-start-7 col-span-1 ml-5">
-            <div className="max-w-sm overflow-hidden rounded shadow-lg">
-              <label
-                htmlFor="countries"
-                className="mb-2 block text-md font-medium text-gray-900 dark:text-black text-center"
-              >
-                Grade
-              </label>
+            <div className="col-start-6 col-span-1 ml-5 mt-7">
+              <div className="max-w-sm overflow-hidden rounded shadow-lg">
+                
 
-              <select
-                defaultValue={"DEFAULT"}
-                id="countries"
-                className="block w-full rounded-lg border border-black  bg-black p-2.5 text-sm text-black  focus:border-blue-500 focus:ring-blue-500 dark:border-black  dark:bg-black  dark:text-white dark:placeholder-white  dark:focus:border-blue-500 dark:focus:ring-blue-500"
-              >
-                <option value="DEFAULT" disabled>
-                  Select an option
-                </option>
-                <option value="AD">3.70 - 4.0</option>
-                <option value="BS">3.30 - 3.69</option>
-                <option value="FR">3.0 - 3.29</option>
-                <option value="DE">1.0 - 2.99</option>
-              </select>
+                <select
+                  defaultValue={"DEFAULT"}
+                  id="countries"
+                  className="block w-full rounded-lg border border-black  bg-black p-2.5 text-sm text-black  focus:border-blue-500 focus:ring-blue-500 dark:border-black  dark:bg-black  dark:text-white dark:placeholder-white  dark:focus:border-blue-500 dark:focus:ring-blue-500"
+                >
+                  <option value="DEFAULT" disabled>
+                    Grade
+                  </option>
+                  <option value="AD">3.70 - 4.0</option>
+                  <option value="BS">3.30 - 3.69</option>
+                  <option value="FR">3.0 - 3.29</option>
+                  <option value="DE">1.0 - 2.99</option>
+                </select>
+              </div>
             </div>
-          </div>
 
-          <div className="col-start-8 col-span-1 ml-5">
-            <div className="max-w-sm overflow-hidden rounded shadow-lg">
-              <label
-                htmlFor="countries"
-                className="mb-2 block text-md font-medium text-gray-900 dark:text-black text-center"
-              >
-                Education
-              </label>
+            <div className="col-start-7 col-span-1 ml-5 mt-7">
+              <div className="max-w-sm overflow-hidden rounded shadow-lg">
+                
 
-              <select
-                defaultValue={"DEFAULT"}
-                id="countries"
-                className="block w-full rounded-lg border border-black  bg-black p-2.5 text-sm text-black  focus:border-blue-500 focus:ring-blue-500 dark:border-black  dark:bg-black  dark:text-white dark:placeholder-white  dark:focus:border-blue-500 dark:focus:ring-blue-500"
-              >
-                <option value="DEFAULT" disabled>
-                  Select an option
-                </option>
+                <select
+                  defaultValue={"DEFAULT"}
+                  id="countries"
+                  className="block w-full rounded-lg border border-black  bg-black p-2.5 text-sm text-black  focus:border-blue-500 focus:ring-blue-500 dark:border-black  dark:bg-black  dark:text-white dark:placeholder-white  dark:focus:border-blue-500 dark:focus:ring-blue-500"
+                >
+                  <option value="DEFAULT" disabled>
+                    Education
+                  </option>
 
-                <option value="BS">Masters</option>
-                <option value="FR">Phd</option>
-              </select>
+                  <option value="BS">Masters</option>
+                  <option value="FR">Phd</option>
+                </select>
+              </div>
             </div>
-          </div>
-        </div>
 
+
+
+            <div className="col-start-8 col-span-1 ml-5 mt-7">
+              <div className="max-w-sm overflow-hidden rounded shadow-lg">
+              
+                  <select id="sort-time" className="p-2 w-full border border-gray-300 rounded-lg bg-black text-white">
+                  <option value="DEFAULT">
+                    Sort by
+                  </option>
+                    <option value="time">Recent</option>
+                    <option value="course">Oldest</option>
+                  </select>
+                </div>
+                </div>
+          </div>
+        
         <div className="overflow-x-auto">
           <table className="table-auto border-collapse border border-slate-400">
             <thead className="bg-slate-400 font-semibold text-xl">
               <tr>
                 <th className="border border-slate-300 p-2">Student Name</th>
-                <th className="border border-slate-300 p-2">Department</th>
+                <th className="border border-slate-300 p-2">Resume</th>
                 <th className="border border-slate-300 p-2">
                   GPA (Out of 4.0)
                 </th>
+              
                 <th className="border border-slate-300 p-2">
-                  International Student?
-                </th>
-                <th className="border border-slate-300 p-2">
-                  Working Hours (Per Week)
+                  Hours (Per Week)
                 </th>
                 <th className="border border-slate-300 p-2">
                   Current Level of Education
                 </th>
 
-                <th className="border border-slate-300 p-2">Description</th>
+                <th className="border border-slate-300 p-2">Student's Note</th>
 
                 <th className="border border-slate-300 p-2">
-                  Match Percentage
+                  Student's Preference
                 </th>
 
                 <th className="border border-slate-300 p-2">
-                  Professor Decision
+                  Your Decision
                 </th>
                 <th className="border border-slate-300 p-2">Chat</th>
               </tr>
@@ -282,11 +283,34 @@ export default function ProfessorCourse() {
                 <td className="text-center border border-slate-500 p-2">
                   Sidedish Yermaneni
                 </td>
-                <td className="border border-slate-500 p-2">Masters</td>
+                <td className="border border-slate-500 p-2">
+                    
+                  <div className="ml-1 max-w-xl p-1 bg-white rounded-lg border border-gray-200 shadow-sm">
+                      <div className="flex items-center space-x-4">
+                        <button className="p-2 bg-blue-50 rounded-lg">
+                          <File className="w-5 h-5 text-black" />
+                        </button>
+                        
+                        <div className="flex-1 min-w-0">
+                          <div className="flex">
+                            <button className="text-lg font-medium text-gray-900 truncate">
+                              Sid.pdf
+                            </button>
+                            
+                          </div>
+                          
+                          
+                        </div>
+                      </div>
+                      
+                      
+                    </div>
+
+
+                </td>
                 {/* Grade Input */}
                 <td className="border border-slate-500 p-2">3.96</td>
-                {/* Internation Student*/}
-                <td className="border border-slate-500 p-2">Yes</td>
+                
 
                 {/* Working Hours*/}
                 <td className="border border-slate-500 p-2">20</td>
@@ -323,7 +347,7 @@ export default function ProfessorCourse() {
                 {/* Actions */}
 
                 <td className="border border-slate-500 p-2">
-                  <h1 className="text-lg">60</h1>
+                  <h1 className="text-lg">5</h1>
                 </td>
 
                 <td className="border border-slate-500 p-2">
@@ -333,9 +357,9 @@ export default function ProfessorCourse() {
                   >
                     <button
                       type="button"
-                      className=" ml-3 focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800 content-center"
+                      className=" ml-3 focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800 content-center"
                     >
-                      Accepted
+                      Revoke
                     </button>
                   </div>
                 </td>
@@ -420,11 +444,33 @@ export default function ProfessorCourse() {
                 <td className="text-center border border-slate-500 p-2">
                   Indu Pots
                 </td>
-                <td className="border border-slate-500 p-2">Masters</td>
+                <td className="border border-slate-500 p-2">
+                  
+                  <div className="ml-1 max-w-xl p-1 bg-white rounded-lg border border-gray-200 shadow-sm">
+                        <div className="flex items-center space-x-4">
+                          <button className="p-2 bg-blue-50 rounded-lg">
+                            <File className="w-5 h-5 text-black" />
+                          </button>
+                          
+                          <div className="flex-1 min-w-0">
+                            <div className="flex">
+                              <button className="text-lg font-medium text-gray-900 truncate">
+                                Indu.pdf
+                              </button>
+                              
+                            </div>
+                            
+                            
+                          </div>
+                        </div>
+                        
+                        
+                      </div>
+
+                </td>
                 {/* Grade Input */}
                 <td className="border border-slate-500 p-2">3.94</td>
-                {/* Internation Student*/}
-                <td className="border border-slate-500 p-2">Yes</td>
+               
 
                 {/* Working Hours*/}
                 <td className="border border-slate-500 p-2">20</td>
@@ -461,9 +507,9 @@ export default function ProfessorCourse() {
                 {/* Match Percentage (%) */}
 
                 <td className="border border-slate-500 p-2">
-                  <h1 className="text-lg">80</h1>
+                  <h1 className="text-lg">3</h1>
                 </td>
-
+                {/**
                 <td className="border border-slate-500">
                   <div className="p-2 flex">
                     <div className="w-1/2 flex">
@@ -482,6 +528,23 @@ export default function ProfessorCourse() {
                     </div>
                   </div>
                 </td>
+                */}
+
+                <td className="border border-slate-500 p-2">
+                  <div
+                    className="inline-flex rounded-md shadow-sm"
+                    role="group"
+                  >
+                    <button
+                      type="button"
+                      className=" ml-3 focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800 content-center"
+                    >
+                      Accept
+                    </button>
+                  </div>
+                </td>
+
+
 
                 <td className="border border-slate-500 p-2">
                   <div className="">
@@ -566,11 +629,34 @@ export default function ProfessorCourse() {
                 <td className="text-center border border-slate-500 p-2">
                   Mohammad Samba
                 </td>
-                <td className="border border-slate-500 p-2">Masters</td>
+                <td className="border border-slate-500 p-2">
+
+                    <div className="ml-1 max-w-xl p-1 bg-white rounded-lg border border-gray-200 shadow-sm">
+                        <div className="flex items-center space-x-4">
+                          <button className="p-2 bg-blue-50 rounded-lg">
+                            <File className="w-5 h-5 text-black" />
+                          </button>
+                          
+                          <div className="flex-1 min-w-0">
+                            <div className="flex">
+                              <button className="text-lg font-medium text-gray-900 truncate">
+                                Samba.pdf
+                              </button>
+                              
+                            </div>
+                            
+                            
+                          </div>
+                        </div>
+                        
+                        
+                      </div>
+
+                </td>
                 {/* Grade Input */}
                 <td className="border border-slate-500 p-2">3.81</td>
-                {/* Internation Student*/}
-                <td className="border border-slate-500 p-2">Yes</td>
+                
+               
 
                 {/* Working Hours*/}
                 <td className="border border-slate-500 p-2">25</td>
@@ -607,11 +693,11 @@ export default function ProfessorCourse() {
                 {/* Description */}
 
                 <td className="border border-slate-500 p-2">
-                  <h1 className="text-lg">80</h1>
+                  <h1 className="text-lg">4</h1>
                 </td>
 
                 {/* Professor Decision */}
-
+                {/*
                 <td className="border border-slate-500">
                   <div className="p-2 flex">
                     <div className="w-1/2 flex">
@@ -628,6 +714,21 @@ export default function ProfessorCourse() {
                         Reject
                       </button>
                     </div>
+                  </div>
+                </td>
+                */}
+
+                <td className="border border-slate-500 p-2">
+                  <div
+                    className="inline-flex rounded-md shadow-sm"
+                    role="group"
+                  >
+                    <button
+                      type="button"
+                      className=" ml-3 focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800 content-center"
+                    >
+                      Accept
+                    </button>
                   </div>
                 </td>
 
@@ -649,7 +750,7 @@ export default function ProfessorCourse() {
                     }`}
                   >
                     <div className="bg-white shadow-md rounded-lg max-w-lg w-full">
-                      <div className="p-4 border-b bg-blue-500 text-white rounded-t-lg flex justify-between items-center">
+                      <div className="p-4 border-b bg-black text-white rounded-t-lg flex justify-between items-center">
                         <p className="text-lg font-semibold">Mohammad Samba</p>
                         <button
                           onClick={() => setIsOpen(false)}
@@ -673,7 +774,7 @@ export default function ProfessorCourse() {
                             <p
                               className={`${
                                 message.type === "user"
-                                  ? "bg-blue-500 text-white"
+                                  ? "bg-black text-white"
                                   : "bg-gray-200 text-black"
                               } rounded-lg py-2 px-4 inline-block`}
                             >
@@ -694,7 +795,7 @@ export default function ProfessorCourse() {
                         />
                         <button
                           onClick={handleSendMessage}
-                          className="bg-blue-500 text-white px-4 py-2 rounded-r-md hover:bg-blue-600 transition duration-300"
+                          className="bg-black text-white px-4 py-2 rounded-r-md hover:bg-black transition duration-300"
                         >
                           Send
                         </button>
