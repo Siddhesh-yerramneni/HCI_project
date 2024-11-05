@@ -1,6 +1,5 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
-import { Dummy } from './dummy';
 
 export const Login = () => {
 
@@ -127,7 +126,7 @@ function handleSubmit(event){
 
   {/* ------------------------------------------------------------------------------------------------------------------ */}
 
-  <Dummy/>
+ 
   
 
     

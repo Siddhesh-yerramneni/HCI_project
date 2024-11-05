@@ -47,6 +47,72 @@ export default function AdminP() {
                             <img src="https://static.vecteezy.com/system/resources/thumbnails/007/469/004/small_2x/graduated-student-in-simple-flat-personal-profile-icon-or-symbol-people-concept-illustration-vector.jpg"
                                 alt="Student" className="h-32 w-32 rounded-full shadow-lg" />
                         </div>
+                        {/* Dashboard */}
+                        <div className='flex flex-row gap-6 justify-evenly'>
+                        <div class="flex flex-col bg-white border shadow-sm rounded-xl dark:bg-neutral-900 dark:border-neutral-700 dark:shadow-neutral-700/70 size-2/12">
+                                <div class="bg-gray-100 border-b rounded-t-xl py-3 px-4 md:py-4 md:px-5 dark:bg-neutral-900 dark:border-neutral-700">
+                                    <p class="mt-1 text-md text-white dark:text-white">
+                                    Available positions
+                                    </p>
+                                </div>
+                                <div class="p-4">
+                                    <h3 class="text-3xl text-center font-bold text-gray-800 dark:text-white">
+                                    10
+                                    </h3>
+                                    <p class="mt-2 text-gray-500 dark:text-neutral-400">
+                                    10 positions are yet to be filled.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="flex flex-col bg-white border shadow-sm rounded-xl dark:bg-neutral-900 dark:border-neutral-700 dark:shadow-neutral-700/70 size-2/12">
+                                <div class="bg-gray-100 border-b rounded-t-xl py-3 px-4 md:py-4 md:px-5 dark:bg-neutral-900 dark:border-neutral-700">
+                                    <p class="mt-1 text-md text-white dark:text-white">
+                                    Pending
+                                    </p>
+                                </div>
+                                <div class="p-4">
+                                    <h3 class="text-3xl text-center font-bold text-gray-800 dark:text-white">
+                                    10
+                                    </h3>
+                                    <p class="mt-2 text-gray-500 dark:text-neutral-400">
+                                    10 pending application waiting for offer.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="flex flex-col bg-white border shadow-sm rounded-xl dark:bg-neutral-900 dark:border-neutral-700 dark:shadow-neutral-700/70 size-2/12">
+                                <div class="bg-gray-100 border-b rounded-t-xl py-3 px-4 md:py-4 md:px-5 dark:bg-neutral-900 dark:border-neutral-700">
+                                    <p class="mt-1 text-md text-white dark:text-white">
+                                    Offers sent
+                                    </p>
+                                </div>
+                                <div class="p-4">
+                                    <h3 class="text-3xl text-center font-bold text-gray-800 dark:text-white">
+                                    4
+                                    </h3>
+                                    <p class="mt-2 text-gray-500 dark:text-neutral-400">
+                                    You have sent 4 offer letters.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="flex flex-col bg-white border shadow-sm rounded-xl dark:bg-neutral-900 dark:border-neutral-700 dark:shadow-neutral-700/70 size-2/12">
+                                <div class="bg-gray-100 border-b rounded-t-xl py-3 px-4 md:py-4 md:px-5 dark:bg-neutral-900 dark:border-neutral-700">
+                                    <p class="mt-1 text-md text-white dark:text-white">
+                                    Positions filled 
+                                    </p>
+                                </div>
+                                <div class="p-4">
+                                    <h3 class="text-3xl text-center font-bold text-gray-800 dark:text-white">
+                                    50
+                                    </h3>
+                                    <p class="mt-2 text-gray-500 dark:text-neutral-400">
+                                    You have filled 50 TA positions.
+                                    </p>
+                                </div>
+                            </div>
+                            </div>
                         <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
                             <div>
                                 <label className="block text-gray-700">Office location:</label>

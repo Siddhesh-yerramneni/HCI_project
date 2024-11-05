@@ -1,8 +1,52 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
-
+import { useState, useEffect, useRef } from "react";
 export default function ProfessorProfile() {
+    function handleChange() {
+        return;
+      }
+    const [isOpen, setIsOpen] = useState(true);
+  const [messages, setMessages] = useState([
+    { type: "user", content: "hello" },
+    { type: "bot", content: "Good morning professor" },
+    { type: "user", content: "Your TA application looks great! I remember you from CAP4410." },
+    { type: "bot", content: "Thanks! I'm excited about the opportunity to help students" },
+    { type: "user", content: " That's great. I'll be in touch soon to discuss the details." },
+    
+  ]);
+  const [inputValue, setInputValue] = useState("");
+  const chatboxRef = useRef(null);
+
+  useEffect(() => {
+    if (chatboxRef.current) {
+      chatboxRef.current.scrollTop = chatboxRef.current.scrollHeight;
+    }
+  }, [messages]);
+
+  const handleSendMessage = () => {
+    if (inputValue.trim() === "") return;
+
+    setMessages([...messages, { type: "user", content: inputValue }]);
+    setInputValue("");
+
+    // Simulate bot response
+    setTimeout(() => {
+      setMessages((prev) => [
+        ...prev,
+        {
+          type: "bot",
+          content: "Blah Blah Blah",
+        },
+      ]);
+    }, 500);
+  };
+
+  const handleKeyPress = (e) => {
+    if (e.key === "Enter") {
+      handleSendMessage();
+    }
+  };
     return (
         <div className="min-h-screen flex flex-col relative bg-gray-50">
             {/* Left Arrow */}
@@ -40,13 +84,79 @@ export default function ProfessorProfile() {
                 <h2 className="text-2xl text-center font-semibold text-gray-800">Dr Cognition's Profile</h2>
                 <p className="text-center text-black mt-2">Please keep your profile updated for smooth handling of the application processings for the positions and communication.</p>
                 <p className="text-center text-black mb-2">Make your position requests.</p>
-
                 <div className="flex flex-col items-center">
                     <form className="w-full space-y-4">
                         <div className="flex justify-center">
                             <img src="https://static.vecteezy.com/system/resources/thumbnails/007/469/004/small_2x/graduated-student-in-simple-flat-personal-profile-icon-or-symbol-people-concept-illustration-vector.jpg"
                                 alt="Student" className="h-32 w-32 rounded-full shadow-lg" />
                         </div>
+                        
+                        {/* Dashboard */}
+                        <div className='flex flex-row gap-6 justify-evenly'>
+                            <div class="flex flex-col bg-white border shadow-sm rounded-xl dark:bg-neutral-900 dark:border-neutral-700 dark:shadow-neutral-700/70 size-2/12">
+                                <div class="bg-gray-100 border-b rounded-t-xl py-3 px-4 md:py-4 md:px-5 dark:bg-neutral-900 dark:border-neutral-700">
+                                    <p class="mt-1 text-md text-white dark:text-white">
+                                    Available hours
+                                    </p>
+                                </div>
+                                <div class="p-4">
+                                    <h3 class="text-3xl text-center font-bold text-gray-800 dark:text-white">
+                                    150
+                                    </h3>
+                                    <p class="mt-2 text-gray-500 dark:text-neutral-400">
+                                    You have 150 available hours to fill.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="flex flex-col bg-white border shadow-sm rounded-xl dark:bg-neutral-900 dark:border-neutral-700 dark:shadow-neutral-700/70 size-2/12">
+                                <div class="bg-gray-100 border-b rounded-t-xl py-3 px-4 md:py-4 md:px-5 dark:bg-neutral-900 dark:border-neutral-700">
+                                    <p class="mt-1 text-md text-white dark:text-white">
+                                    Postings made
+                                    </p>
+                                </div>
+                                <div class="p-4">
+                                    <h3 class="text-3xl text-center font-bold text-gray-800 dark:text-white">
+                                    4
+                                    </h3>
+                                    <p class="mt-2 text-gray-500 dark:text-neutral-400">
+                                    You have 4 active postings.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="flex flex-col bg-white border shadow-sm rounded-xl dark:bg-neutral-900 dark:border-neutral-700 dark:shadow-neutral-700/70 size-2/12">
+                                <div class="bg-gray-100 border-b rounded-t-xl py-3 px-4 md:py-4 md:px-5 dark:bg-neutral-900 dark:border-neutral-700">
+                                    <p class="mt-1 text-md text-white dark:text-white">
+                                    You accepted 
+                                    </p>
+                                </div>
+                                <div class="p-4">
+                                    <h3 class="text-3xl text-center font-bold text-gray-800 dark:text-white">
+                                    2
+                                    </h3>
+                                    <p class="mt-2 text-gray-500 dark:text-neutral-400">
+                                    You found 2 students eligible.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="flex flex-col bg-white border shadow-sm rounded-xl dark:bg-neutral-900 dark:border-neutral-700 dark:shadow-neutral-700/70 size-2/12">
+                                <div class="bg-gray-100 border-b rounded-t-xl py-3 px-4 md:py-4 md:px-5 dark:bg-neutral-900 dark:border-neutral-700">
+                                    <p class="mt-1 text-md text-white dark:text-white">
+                                    You rejected
+                                    </p>
+                                </div>
+                                <div class="p-4">
+                                    <h3 class="text-3xl text-center font-bold text-gray-800 dark:text-white">
+                                    1
+                                    </h3>
+                                    <p class="mt-2 text-gray-500 dark:text-neutral-400">
+                                    Decision can be changed if active.
+                                    </p>
+                                </div>
+                            </div>
+                </div>
                         <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
                             <div>
                                 <label className="block text-gray-700">Office location:</label>
@@ -64,7 +174,7 @@ export default function ProfessorProfile() {
 
             {/* Course Application Table */}
             <section className="mx-auto my-8 max-w-7xl p-6 bg-gray-300 rounded-lg shadow-lg">
-                <h3 className="text-xl font-semibold text-black mb-4 text-center ">Apply for Available Courses</h3>
+                <h3 className="text-xl font-semibold text-black mb-4 text-center ">Manage postings</h3>
                 <div className="overflow-x-auto">
                     <table className="min-w-full border rounded-lg">
                         <thead className="bg-black text-lg font-semibold text-white">
@@ -74,31 +184,18 @@ export default function ProfessorProfile() {
                                 <th className="border p-2">Available hours</th>
                                 <th className="border p-2">Willing to take Masters students</th>
                                 <th className="border p-2">Willing to take PhD students</th>
-                                <th className="border p-2">Comments</th>
+                                <th className="border p-2">Job description</th>
                                 <th className="border p-2">Actions</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr className="text-center text-black">
-                                <td className="border p-2"><input type="text" className="w-full border rounded-lg px-2 py-1 focus:border-blue-500" /></td>
-                                <td className="border p-2"><input type="number" className="w-full border rounded-lg px-2 py-1 focus:border-blue-500" /></td>
-                                <td className="border p-2"><input type="number" className="w-full border rounded-lg px-2 py-1 focus:border-blue-500" /></td>
-                                <td className="border p-2">
-                                <select className="w-full px-2 py-1 border rounded-lg focus:border-blue-500">
-                                        <option>Select...</option>
-                                        <option>Yes</option>
-                                        <option>No</option>
-                                    </select>
-                                </td>
-      
-                                <td className="border p-2">
-                                <select className="w-full px-2 py-1 border rounded-lg focus:border-blue-500">
-                                        <option>Select...</option>
-                                        <option>Yes</option>
-                                        <option>No</option>
-                                    </select>
-                                </td>
-                                <td className="border p-2"><input type="text" className="w-full border rounded-lg px-2 py-1 focus:border-blue-500" /></td>
+                                <td className="border p-2">CAP5100</td>
+                                <td className="border p-2">4</td>
+                                <td className="border p-2">32</td>
+                                <td className="border p-2">Yes </td>
+                                <td className="border p-2">Yes </td>
+                                <td className="border p-2 text-blue-700">CAP5100_TA.pdf</td>
                                 <td className="border p-2 space-x-2 flex flex-row justify-around">
                                     <button className="bg-green-500 text-white px-3 py-1 rounded-lg hover:bg-green-600">Posted</button>
                                     <button className="bg-red-400 text-white px-3 py-1 rounded-lg hover:bg-red-500">Delete</button>
@@ -135,6 +232,239 @@ export default function ProfessorProfile() {
                     <div className='flex flex-row justify-around'>
                           <button className='bg-black text-white rounded-lg p-2 w-1/3'>Create a new posting</button>
                         </div>
+                </div>
+            </section>
+
+            {/* Course Application Table */}
+            <section className="mx-auto my-8 max-w-7xl p-6 bg-gray-300 rounded-lg shadow-lg">
+                <h3 className="text-xl font-semibold text-black mb-4 text-center ">Manage your application decisions</h3>
+                {/* Checkbox and Sort Container */}
+              <div className="flex justify-evenly w-full items-center mb-6">
+                {/* Checkboxes */}
+                <div className="col-start-1">
+            <div className="max-w overflow-hidden rounded shadow-lg">
+              <div className="w-full">
+                <form className="flex items-center">
+                  <label htmlFor="simple-search" className="sr-only">
+                    Search
+                  </label>
+                  <div className="relative w-full">
+                    <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                      <svg
+                        aria-hidden="true"
+                        className="w-5 h-5 text-white dark:text-white"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          fillRule="evenodd"
+                          d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
+                          clipRule="evenodd"
+                        />
+                      </svg>
+                    </div>
+                    <input
+                      type="text"
+                      id="simple-search"
+                      className="bg-black border border-black text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full pl-10 p-2 dark:bg-black dark:border-black dark:placeholder-white dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 text-white"
+                      placeholder="Search for Students"
+                      required=""
+                    />
+                  </div>
+                </form>
+              </div>
+            </div>
+            </div>
+
+            <div className="">
+              <div className="max-w-sm overflow-hidden rounded shadow-lg">
+                <select
+                  defaultValue={"DEFAULT"}
+                  id="countries"
+                  className="block w-full rounded-lg border border-black  bg-black p-2.5 text-sm text-black  focus:border-blue-500 focus:ring-blue-500 dark:border-black  dark:bg-black  dark:text-white dark:placeholder-white  dark:focus:border-blue-500 dark:focus:ring-blue-500"
+                >
+                  <option value="DEFAULT" disabled>
+                    Select the course
+                  </option>
+                  <option value="AD">CAP1000</option>
+                  <option value="BS">CAP2000</option>
+                  <option value="FR">CAP5100</option>
+                  <option value="DE">CAP6930</option>
+                </select>
+              </div>
+            </div>
+          
+            <div className="">
+              <div className="max-w-sm overflow-hidden rounded shadow-lg">
+                <select
+                  defaultValue={"DEFAULT"}
+                  id="countries"
+                  className="block w-full rounded-lg border border-black bg-black p-2.5 text-sm text-black focus:border-blue-500 focus:ring-blue-500 dark:border-black dark:bg-black dark:text-white dark:placeholder-white dark:focus:border-blue-500 dark:focus:ring-blue-500"
+                >
+                  <option value="DEFAULT" disabled>
+                    Hours
+                  </option>
+                  <option value="AD">20+</option>
+                  <option value="BS">15-20</option>
+                  <option value="FR">10-15</option>
+                  <option value="DE">5-10</option>
+                </select>
+              </div>
+            </div>
+
+            <div className="">
+              <div className="max-w-sm overflow-hidden rounded shadow-lg">
+                <select
+                  defaultValue={"DEFAULT"}
+                  id="countries"
+                  className="block w-full rounded-lg border border-black  bg-black p-2.5 text-sm text-black  focus:border-blue-500 focus:ring-blue-500 dark:border-black  dark:bg-black  dark:text-white dark:placeholder-white  dark:focus:border-blue-500 dark:focus:ring-blue-500"
+                >
+                  <option value="DEFAULT" disabled>
+                    Grade
+                  </option>
+                  <option value="AD">3.70 - 4.0</option>
+                  <option value="BS">3.30 - 3.69</option>
+                  <option value="FR">3.0 - 3.29</option>
+                  <option value="DE">1.0 - 2.99</option>
+                </select>
+              </div>
+            </div>
+
+            <div className="">
+              <div className="max-w-sm overflow-hidden rounded shadow-lg">
+                <select
+                  defaultValue={"DEFAULT"}
+                  id="countries"
+                  className="block w-full rounded-lg border border-black  bg-black p-2.5 text-sm text-black  focus:border-blue-500 focus:ring-blue-500 dark:border-black  dark:bg-black  dark:text-white dark:placeholder-white  dark:focus:border-blue-500 dark:focus:ring-blue-500"
+                >
+                  <option value="DEFAULT" disabled>
+                    Education
+                  </option>
+
+                  <option value="BS">Masters</option>
+                  <option value="FR">Phd</option>
+                </select>
+              </div>
+            </div>
+
+            <div className="">
+              <div className="max-w-sm overflow-hidden rounded shadow-lg">
+              
+                  <select id="sort-time" className="p-2 w-full border border-gray-300 rounded-lg bg-black text-white">
+                  <option value="DEFAULT">
+                    Sort by
+                  </option>
+                    <option value="time">Recent</option>
+                    <option value="course">Oldest</option>
+                  </select>
+                </div>
+                </div>
+            </div>
+                <div className="overflow-x-auto">
+                    <table className="min-w-full border rounded-lg">
+                        <thead className="bg-black text-lg font-semibold text-white">
+                            <tr>
+                                <th className="border p-2">Student Name</th>
+                                <th className="border p-2">Resume</th>
+                                <th className="border p-2">Grade</th>
+                                <th className="border p-2">Hours</th>
+                                <th className="border p-2">Program</th>
+                                <th className="border p-2">Student's comment</th>
+                                <th className="border p-2">Student's Preference</th>
+                                <th className="border p-2">Action</th>
+                                <th className="border p-2">Chat</th>
+                            </tr>
+                        </thead>
+                        <tbody className=''>
+                            <tr className="text-center text-black">
+                                <td className="border p-2">Eddie Brook</td>
+                                <td className="border p-2 underline text-blue">Eddie Brook's resume</td>
+                                <td className="border p-2">A</td>
+                                <td className="border p-2">35</td>
+                                <td className="border p-2">PhD</td>
+                                <td className="border p-2">I'm passionate about designing user-friendly interfaces and <span className='text-blue-700'>Read more...</span></td>
+                                <td className="border p-2">5</td>
+                                <td className="border border-slate-300 p-2 text-center">
+                                    <div className="flex justify-center space-x-3">
+                                    <button className="bg-green-500 text-white py-2 px-4 rounded-lg" disabled>Accepted</button>
+                                    <button className="bg-red-500 text-white py-2 px-4 rounded-lg">Reject</button>
+                                    </div>
+                                </td>
+                                <td className="border p-2">
+                                    <div className="">
+                                        <button
+                                        onClick={() => setIsOpen(!isOpen)}
+                                        className="bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 transition duration-300 text-md font-semibold "
+                                        >
+                                        <span className="w-6 h-6" />
+                
+                                        Chat
+                                        </button>
+                                    </div>
+
+                                    <div
+                                        className={`fixed bottom-16 right-4 w-96 ${
+                                        !isOpen ? "hidden" : ""
+                                        }`}
+                                    >
+                                        <div className="bg-white shadow-md rounded-lg max-w-lg w-full">
+                                        <div className="p-4 border-b bg-blue-500 text-white rounded-t-lg flex justify-between items-center">
+                                            <p className="text-lg font-semibold">Sidedish Yermaneni</p>
+                                            <button
+                                            onClick={() => setIsOpen(false)}
+                                            className="text-gray-300 hover:text-gray-400 focus:outline-none focus:text-gray-400"
+                                            >
+                                            <span className="w-10 h-10 text-bold">X</span>
+                                            </button>
+                                        </div>
+
+                                        <div
+                                            ref={chatboxRef}
+                                            className="p-4 h-80 overflow-y-auto"
+                                        >
+                                            {messages.map((message, index) => (
+                                            <div
+                                                key={index}
+                                                className={`mb-2 ${
+                                                message.type === "user" ? "text-right" : "text-left"
+                                                }`}
+                                            >
+                                                <p
+                                                className={`${
+                                                    message.type === "user"
+                                                    ? "bg-blue-500 text-white"
+                                                    : "bg-gray-200 text-black"
+                                                } rounded-lg py-2 px-4 inline-block`}
+                                                >
+                                                {message.content}
+                                                </p>
+                                            </div>
+                                            ))}
+                                        </div>
+
+                                        <div className="p-4 border-t flex">
+                                            <input
+                                            type="text"
+                                            value={inputValue}
+                                            onChange={(e) => setInputValue(e.target.value)}
+                                            onKeyUp={handleKeyPress}
+                                            placeholder="Type a message"
+                                            className="w-full px-3 py-2 border rounded-l-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                            />
+                                            <button
+                                            onClick={handleSendMessage}
+                                            className="bg-blue-500 text-white px-4 py-2 rounded-r-md hover:bg-blue-600 transition duration-300"
+                                            >
+                                            Send
+                                            </button>
+                                        </div>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </section>
 

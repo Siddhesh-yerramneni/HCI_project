@@ -5,9 +5,7 @@ import ProfessorLogin from './pages/ProfessorLogin.jsx';
 import AdminLogin from './pages/AdminLogin.jsx';
 import StudentProfile from './pages/StudentProfile.jsx';
 import ProfessorProfile from './pages/ProfessorProfile.jsx';
-import StudentApplicationManagement from './pages/StudentApplicationManagement.jsx';
 import Adminp from './pages/Adminp.jsx';
-import ProfessorCourse from './pages/ProfessorCourse.jsx';
 import { Login } from './pages/Login.jsx';
 export default function App() {
   return (
@@ -20,8 +18,6 @@ export default function App() {
         <Route path='/sp' element={<StudentProfile />}/>
         <Route path='/pp' element={<ProfessorProfile />}/>
         <Route path='/app' element={<Adminp />}/>
-        <Route path="/pc" element={<ProfessorCourse/>}/>
-        <Route path='/sam' element={<StudentApplicationManagement/>} />
         <Route path='/login' element={<Login/>}/>
       </Routes>
     </BrowserRouter>

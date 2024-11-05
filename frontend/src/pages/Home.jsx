@@ -5,34 +5,24 @@ export default function Home() {
   return (
     <div className="min-h-screen flex flex-col">
       {/* Header */}
-      <header className="w-full bg-black py-3 shadow-md flex justify-between items-center px-4 sm:px-8">
-        <div className="flex items-center">
-          <Link to='/'>
-            <img
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-7DjAZZLWBGma-Vm01k1yr2ErdOngnGFEJg&s"
-              alt="University Logo"
-              className="h-10 w-10 sm:h-12 sm:w-12 mr-2 sm:mr-4"
-            />
-          </Link>
-          <div>
-            <h1 className="text-lg sm:text-2xl font-bold text-white">
-              TA Assignment System (TAAS)
-            </h1>
-            <p className="text-sm sm:text-md text-white">University of Florida</p>
-          </div>
-        </div>
-        <div className="flex space-x-4 sm:space-x-6">
-          <button className="text-white text-sm sm:text-lg hover:text-blue-600 transition">
-            About
-          </button>
-          <button className="text-white text-sm sm:text-lg hover:text-blue-600 transition">
-            Give me a tour
-          </button>
-          <button className="text-white text-sm sm:text-lg hover:text-blue-600 transition">
-            Contact support
-          </button>
-        </div>
-      </header>
+      <header className="sticky top-0 w-full bg-black py-3 shadow-md flex justify-between items-center px-8 z-10">
+                <div className="flex items-center">
+                    <Link to='/'>
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-7DjAZZLWBGma-Vm01k1yr2ErdOngnGFEJg&s"
+                            alt="University Logo" className="h-12 w-12 mr-4 rounded-full" />
+                    </Link>
+                    <div>
+                        <h1 className="text-xl font-bold text-white">TA Assignment System</h1>
+                        <p className="text-sm text-gray-300">University of Florida</p>
+                    </div>
+                </div>
+                <nav className="flex space-x-4">
+                    <Link to="/" className="text-white hover:text-blue-500 transition">About</Link>
+                    <Link to="/" className="text-white hover:text-blue-500 transition">Help</Link>
+                    <Link to="/" className="text-white hover:text-blue-500 transition">Contact</Link>
+                    <Link to="/" className="text-white hover:text-blue-500 transition">Logout</Link>
+                </nav>
+            </header>
 
       {/* Main Content */}
       <main className="flex flex-col flex-grow items-center mt-10 sm:mt-20 text-center px-4">
