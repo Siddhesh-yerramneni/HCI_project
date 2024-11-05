@@ -1,241 +1,147 @@
-import React from 'react'
+import React from 'react';
 import { Link } from 'react-router-dom';
-import { FaArrowLeft, FaArrowRight } from 'react-icons/fa'; // Import icons
+import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
+
 export default function ProfessorProfile() {
     return (
-        <div className="min-h-screen flex flex-col relative">
-          {/* Left Arrow */}
-          <Link to="/previous-page" className="absolute left-24 top-1/2 transform -translate-y-1/2 bg-black text-white p-3 rounded-full hover:bg-gray-800 transition">
-            <FaArrowLeft size={40} />
-          </Link>
-    
-          {/* Right Arrow */}
-          <Link to="/next-page" className="absolute right-24 top-1/2 transform -translate-y-1/2 bg-black text-white p-3 rounded-full hover:bg-gray-800 transition">
-            <FaArrowRight size={40} />
-          </Link>
-    
-          {/* Header */}
-          <header className="w-full bg-black py-3 shadow-md flex justify-between items-center px-8">
-            <div className="flex items-center">
-                <Link to='/'>
-          <         img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-7DjAZZLWBGma-Vm01k1yr2ErdOngnGFEJg&s"
-                    alt="University Logo" className="h-12 w-12 mr-4" />
-                </Link>
-              <div>
-                <h1 className="text-2xl font-bold text-white">TA Assignment System (TAAS)</h1>
-                <p className="text-md text-white">University of Florida</p>
-              </div>
-            </div>
-            <div className="flex space-x-6">
-              <button className="text-white text-lg hover:text-blue-600 transition">About</button>
-              <button className="text-white text-lg hover:text-blue-600 transition">Help</button>
-              <button className="text-white text-lg hover:text-blue-600 transition">Contact</button>
-              <button className="text-white text-lg hover:text-blue-600 transition">Logout</button>
-            </div>
-          </header>
-    
-          {/* Main Content */}
-          <span className='text-2xl text-center font-semibold text-black bg-slate-200 p-3'>Professor's Profile</span>
-          <span className='text-lg text-center font-medium text-black bg-slate-200'>Welcome Professor! Please keep your profile updated for better communication. Scroll down to manage the applications.</span>
+        <div className="min-h-screen flex flex-col relative bg-gray-50">
+            {/* Left Arrow */}
+            <Link to="/previous-page" className="absolute left-6 top-1/2 transform -translate-y-1/2 bg-black text-white p-3 rounded-full hover:bg-gray-800 transition">
+                <FaArrowLeft size={30} />
+            </Link>
 
-          {/*Cannot post error - number of people*/}
-          {/* <div class="bg-blue-100 border-t border-b border-red-700 text-red-700 px-4 py-3" role="alert">
-            <p class="font-bold text-lg text-center">Cannot post the request</p>
-            <p class="text-md text-center">People has to be greater than 1.</p>
-          </div> */}
+            {/* Right Arrow */}
+            <Link to="/next-page" className="absolute right-6 top-1/2 transform -translate-y-1/2 bg-black text-white p-3 rounded-full hover:bg-gray-800 transition">
+                <FaArrowRight size={30} />
+            </Link>
 
-          {/* Cannot post error - number of hours */}
-          {/* <div class="bg-blue-100 border-t border-b border-red-700 text-red-700 px-4 py-3" role="alert">
-            <p class="font-bold text-lg text-center">Cannot post the request</p>
-            <p class="text-md text-center">Hours has to be greater than 1.</p>
-          </div> */}
-
-          {/*Request posted succesfully*/}
-          {/* <div class="bg-blue-100 border-t border-b border-green-700 text-green-700 px-4 py-3" role="alert">
-            <p class="font-bold text-lg text-center">Request posted</p>
-            <p class="text-md text-center">Your request is posted succesfully. An update will be delivered soon!</p>
-          </div> */}
-
-          {/*Request edited succesfully*/}
-          {/* <div class="bg-blue-100 border-t border-b border-green-700 text-green-700 px-4 py-3" role="alert">
-            <p class="font-bold text-lg text-center">Request edited succesfully</p>
-            <p class="text-md text-center">Your request is edited succesfully. An update will be delivered soon!</p>
-          </div> */}
-
-          {/*Profile updated succesfully*/}
-          {/* <div class="bg-blue-100 border-t border-b border-green-700 text-green-700 px-4 py-3" role="alert">
-            <p class="font-bold text-lg text-center">Profile updated succesfully</p>
-            <p class="text-md text-center">Thank you for updating the details.</p>
-          </div> */}
-
-          <div className='flex-grow items-center justify-center bg-zinc-200'>
-            <div className='flex flex-col items-center mt-4'>
-                <form className='flex flex-grow flex-col w-1/3 text-xl font-semibold p-3'>
-                <div>
-                  <img src="https://cdn-icons-png.freepik.com/256/2798/2798310.png?semt=ais_hybrid" 
-                  alt="student image" srcset="" className='h-40 w-40 rounded-full ml-64' />
+            {/* Header */}
+            <header className="sticky top-0 w-full bg-black py-3 shadow-md flex justify-between items-center px-8 z-10">
+                <div className="flex items-center">
+                    <Link to='/'>
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-7DjAZZLWBGma-Vm01k1yr2ErdOngnGFEJg&s"
+                            alt="University Logo" className="h-12 w-12 mr-4 rounded-full" />
+                    </Link>
+                    <div>
+                        <h1 className="text-xl font-bold text-white">TA Assignment System</h1>
+                        <p className="text-sm text-gray-300">University of Florida</p>
+                    </div>
                 </div>
-                  <div className='mb-1 flex flex-col mt-2'>
-                    <label className='mb-2'>Enter office location</label>
-                    <input type="text" className='p-2'/>
-                  </div>
-                  <div className='mb-1 flex flex-col mt-2'>
-                    <label className='mb-2'>Enter E-mail</label>
-                    <input type="email" className='p-2'/>
-                  </div>
-                  <div className='flex flex-col mt-3'>
-                    {/* <button className='bg-gray-500 rounded-lg p-2'>Update</button> */}
-                    <button className='bg-gray-500 rounded-lg p-2'>Cancel Update</button>
-                  </div>
-                </form>
-            </div>
-          </div>
+                <nav className="flex space-x-4">
+                    <Link to="/" className="text-white hover:text-blue-500 transition">About</Link>
+                    <Link to="/" className="text-white hover:text-blue-500 transition">Help</Link>
+                    <Link to="/" className="text-white hover:text-blue-500 transition">Contact</Link>
+                    <Link to="/" className="text-white hover:text-blue-500 transition">Logout</Link>
+                </nav>
+            </header>
 
-          <span className='text-2xl text-center font-semibold text-white bg-black p-3'>Your request space </span>
-          <div className="overflow-x-auto">
-            <table className="min-w-full border-collapse border border-slate-400">
-              <thead className="bg-slate-400 font-semibold text-xl">
-                <tr>
-                  <th className='border border-slate-300 p-2'>Enter course Name</th>
-                  <th className="border border-slate-300 p-2">Number of people</th>
-                  <th className="border border-slate-300 p-2">Number of hours available</th>
-                  <th className="border border-slate-300 p-2">Willing to take Masters students?</th>
-                  <th className="border border-slate-300 p-2">Willing to take Phd students?</th>
-                  <th className="border border-slate-300 p-2">Comments</th>
-                  <th className='border border-slate-300 p-2'>Actions</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  {/* Course Selection */}
-                  <td className='text-center border border-slate-500 p-2'> 
-                    <input type="text" placeholder='CAP5100'/>
-                  </td>
-                  <td className="border border-slate-500 p-2">
-                  <input type="number" placeholder='4'/>
-                  </td>
-                  {/* Grade Input */}
-                  <td className="border border-slate-500 p-2">
-                  <input type="number" placeholder='60'/>
-                  </td>
+            {/* Profile Info */}
+            <section className="p-6 mx-auto mt-4 w-full max-w-7xl bg-gray-300 rounded-lg shadow-lg">
+                <h2 className="text-2xl text-center font-semibold text-gray-800">Dr Cognition's Profile</h2>
+                <p className="text-center text-black mt-2">Please keep your profile updated for smooth handling of the application processings for the positions and communication.</p>
+                <p className="text-center text-black mb-2">Make your position requests.</p>
 
-                  {/* Willingness to be TA */}
-                  <td className="border border-slate-500 p-2">
-                    <select
-                      name="willingness"
-                      id="willingness"
-                      className="w-full px-4 py-2 borderrounded-lg"
-                      required
-                    >
-                      <option value="">Select...</option>
-                      <option value="Yes">Yes</option>
-                      <option value="No">No</option>
-                    </select>
-                  </td>
+                <div className="flex flex-col items-center">
+                    <form className="w-full space-y-4">
+                        <div className="flex justify-center">
+                            <img src="https://static.vecteezy.com/system/resources/thumbnails/007/469/004/small_2x/graduated-student-in-simple-flat-personal-profile-icon-or-symbol-people-concept-illustration-vector.jpg"
+                                alt="Student" className="h-32 w-32 rounded-full shadow-lg" />
+                        </div>
+                        <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+                            <div>
+                                <label className="block text-gray-700">Office location:</label>
+                                <input type="number" className="w-full px-4 py-2 border rounded-lg focus:border-blue-500" />
+                            </div>
+                            <div>
+                                <label className="block text-gray-700">E-mail:</label>
+                                <input type="number" className="w-full px-4 py-2 border rounded-lg focus:border-blue-500" />
+                            </div>
+                        </div>
+                        <button className="w-full bg-black text-white py-2 rounded-lg font-semibold hover:bg-gray-800 transition">Update Profile</button>
+                    </form>
+                </div>
+            </section>
 
-                  {/* Preference Level Buttons */}
-                  <td className="border border-slate-500 p-2">
-                    <select
-                      name="willingness"
-                      id="willingness"
-                      className="w-full px-4 py-2 rounded-lg"
-                      required
-                    >
-                      <option value="">Select...</option>
-                      <option value="Yes">Yes</option>
-                      <option value="No">No</option>
-                    </select>
-                  </td>
+            {/* Course Application Table */}
+            <section className="mx-auto my-8 max-w-7xl p-6 bg-gray-300 rounded-lg shadow-lg">
+                <h3 className="text-xl font-semibold text-black mb-4 text-center ">Apply for Available Courses</h3>
+                <div className="overflow-x-auto">
+                    <table className="min-w-full border rounded-lg">
+                        <thead className="bg-black text-lg font-semibold text-white">
+                            <tr>
+                                <th className="border p-2"> Enter course Name</th>
+                                <th className="border p-2">Number of people</th>
+                                <th className="border p-2">Available hours</th>
+                                <th className="border p-2">Willing to take Masters students</th>
+                                <th className="border p-2">Willing to take PhD students</th>
+                                <th className="border p-2">Comments</th>
+                                <th className="border p-2">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr className="text-center text-black">
+                                <td className="border p-2"><input type="text" className="w-full border rounded-lg px-2 py-1 focus:border-blue-500" /></td>
+                                <td className="border p-2"><input type="number" className="w-full border rounded-lg px-2 py-1 focus:border-blue-500" /></td>
+                                <td className="border p-2"><input type="number" className="w-full border rounded-lg px-2 py-1 focus:border-blue-500" /></td>
+                                <td className="border p-2">
+                                <select className="w-full px-2 py-1 border rounded-lg focus:border-blue-500">
+                                        <option>Select...</option>
+                                        <option>Yes</option>
+                                        <option>No</option>
+                                    </select>
+                                </td>
+      
+                                <td className="border p-2">
+                                <select className="w-full px-2 py-1 border rounded-lg focus:border-blue-500">
+                                        <option>Select...</option>
+                                        <option>Yes</option>
+                                        <option>No</option>
+                                    </select>
+                                </td>
+                                <td className="border p-2"><input type="text" className="w-full border rounded-lg px-2 py-1 focus:border-blue-500" /></td>
+                                <td className="border p-2 space-x-2 flex flex-row justify-around">
+                                    <button className="bg-green-500 text-white px-3 py-1 rounded-lg hover:bg-green-600">Posted</button>
+                                    <button className="bg-red-400 text-white px-3 py-1 rounded-lg hover:bg-red-500">Delete</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                        <tbody>
+                            <tr className="text-center text-black">
+                                <td className="border p-2"><input type="text" className="w-full border rounded-lg px-2 py-1 focus:border-blue-500" /></td>
+                                <td className="border p-2"><input type="number" className="w-full border rounded-lg px-2 py-1 focus:border-blue-500" /></td>
+                                <td className="border p-2"><input type="number" className="w-full border rounded-lg px-2 py-1 focus:border-blue-500" /></td>
+                                <td className="border p-2">
+                                <select className="w-full px-2 py-1 border rounded-lg focus:border-blue-500">
+                                        <option>Select...</option>
+                                        <option>Yes</option>
+                                        <option>No</option>
+                                    </select>
+                                </td>
+      
+                                <td className="border p-2">
+                                <select className="w-full px-2 py-1 border rounded-lg focus:border-blue-500">
+                                        <option>Select...</option>
+                                        <option>Yes</option>
+                                        <option>No</option>
+                                    </select>
+                                </td>
+                                <td className="border p-2"><input type="text" className="w-full border rounded-lg px-2 py-1 focus:border-blue-500" /></td>
+                                <td className="border p-2 space-x-2 flex flex-row justify-around">
+                                    <button className="bg-green-500 text-white px-3 py-1 rounded-lg hover:bg-green-600">Post</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div className='flex flex-row justify-around'>
+                          <button className='bg-black text-white rounded-lg p-2 w-1/3'>Create a new posting</button>
+                        </div>
+                </div>
+            </section>
 
-                  {/* Comments Input */}
-                  <td className="border border-slate-500 p-2">
-                    <input
-                      type="text"
-                      placeholder="Comments"
-                      className="w-full px-4 py-2 borderrounded-lg"
-                    />
-                  </td>
-
-                  <td className='text-center flex flex-row justify-evenly'>
-                    <button className='bg-green-500 rounded p-3'>
-                      Posted
-                    </button>
-                    <button className='bg-red-500 rounded p-3 ml-3'>
-                      Delete
-                    </button>
-                  </td>
-                </tr>
-              </tbody>
-              <tbody>
-                <tr>
-                  {/* Course Selection */}
-                  <td className='text-center'> 
-                    <input type="text" placeholder='CAP5100'/>
-                  </td>
-                  <td className="border border-slate-500 p-2">
-                  <input type="number" placeholder='4'/>
-                  </td>
-                  {/* Grade Input */}
-                  <td className="border border-slate-500 p-2">
-                  <input type="number" placeholder='60'/>
-                  </td>
-
-                  {/* Willingness to be TA */}
-                  <td className="border border-slate-500 p-2">
-                    <select
-                      name="willingness"
-                      id="willingness"
-                      className="w-full px-4 py-2 borderrounded-lg"
-                      required
-                    >
-                      <option value="">Select...</option>
-                      <option value="Yes">Yes</option>
-                      <option value="No">No</option>
-                    </select>
-                  </td>
-
-                  {/* Preference Level Buttons */}
-                  <td className="border border-slate-500 p-2">
-                    <select
-                      name="willingness"
-                      id="willingness"
-                      className="w-full px-4 py-2 rounded-lg"
-                      required
-                    >
-                      <option value="">Select...</option>
-                      <option value="Yes">Yes</option>
-                      <option value="No">No</option>
-                    </select>
-                  </td>
-
-                  {/* Comments Input */}
-                  <td className="border border-slate-500 p-2">
-                    <input
-                      type="text"
-                      placeholder="Comments"
-                      className="w-full px-4 py-2 borderrounded-lg"
-                    />
-                  </td>
-
-                  <td className='text-center flex flex-row justify-evenly'>
-                  <button className='bg-slate-400 rounded p-3'>
-                      Post
-                    </button>
-                    <button className='bg-red-500 rounded p-3 ml-3'>
-                      Delete
-                    </button>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <div className='flex flex-row justify-center'>
-          <button className='text-center font-semibold p-1 bg-gray-400 w-full rounded shadow'>Add one more posting</button>
-          </div>
-          {/* Footer */}
-          <footer className="w-full bg-black text-white py-3 text-center">
-            <p>© 2024 University of Florida. All rights reserved.</p>
-          </footer>
+            {/* Footer */}
+            <footer className="w-full bg-black text-white py-4 text-center">
+                <p>© 2024 University of Florida. All rights reserved.</p>
+            </footer>
         </div>
-      );
+    );
 }
