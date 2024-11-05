@@ -2,11 +2,12 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 import { useState, useEffect, useRef } from "react";
+import { Alert } from './Alert';
 export default function ProfessorProfile() {
     function handleChange() {
         return;
       }
-    const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState([
     { type: "user", content: "hello" },
     { type: "bot", content: "Good morning professor" },
@@ -17,6 +18,10 @@ export default function ProfessorProfile() {
   ]);
   const [inputValue, setInputValue] = useState("");
   const chatboxRef = useRef(null);
+  const [isEnabled,setIsEnabled] = useState(true)
+  const [isAccepted,setIsAccepted] = useState(false);
+  const [isVisible,setIsVisible] = useState(false);
+
 
   useEffect(() => {
     if (chatboxRef.current) {
@@ -47,6 +52,12 @@ export default function ProfessorProfile() {
       handleSendMessage();
     }
   };
+
+  function handleToggle(){
+    setIsEnabled(!isEnabled);
+    setIsVisible(true);
+    setIsAccepted(true);
+  }
     return (
         <div className="min-h-screen flex flex-col relative bg-gray-50">
             {/* Left Arrow */}
@@ -93,65 +104,65 @@ export default function ProfessorProfile() {
                         
                         {/* Dashboard */}
                         <div className='flex flex-row gap-6 justify-evenly'>
-                            <div class="flex flex-col bg-white border shadow-sm rounded-xl dark:bg-neutral-900 dark:border-neutral-700 dark:shadow-neutral-700/70 size-2/12">
-                                <div class="bg-gray-100 border-b rounded-t-xl py-3 px-4 md:py-4 md:px-5 dark:bg-neutral-900 dark:border-neutral-700">
-                                    <p class="mt-1 text-md text-white dark:text-white">
+                            <div className="flex flex-col bg-white border shadow-sm rounded-xl dark:bg-neutral-900 dark:border-neutral-700 dark:shadow-neutral-700/70 size-2/12">
+                                <div className="bg-gray-100 border-b rounded-t-xl py-3 px-4 md:py-4 md:px-5 dark:bg-neutral-900 dark:border-neutral-700">
+                                    <p className="mt-1 text-md text-white dark:text-white">
                                     Available hours
                                     </p>
                                 </div>
-                                <div class="p-4">
-                                    <h3 class="text-3xl text-center font-bold text-gray-800 dark:text-white">
+                                <div className="p-4">
+                                    <h3 className="text-3xl text-center font-bold text-gray-800 dark:text-white">
                                     150
                                     </h3>
-                                    <p class="mt-2 text-gray-500 dark:text-neutral-400">
+                                    <p className="mt-2 text-gray-500 dark:text-neutral-400">
                                     You have 150 available hours to fill.
                                     </p>
                                 </div>
                             </div>
 
-                            <div class="flex flex-col bg-white border shadow-sm rounded-xl dark:bg-neutral-900 dark:border-neutral-700 dark:shadow-neutral-700/70 size-2/12">
-                                <div class="bg-gray-100 border-b rounded-t-xl py-3 px-4 md:py-4 md:px-5 dark:bg-neutral-900 dark:border-neutral-700">
-                                    <p class="mt-1 text-md text-white dark:text-white">
+                            <div className="flex flex-col bg-white border shadow-sm rounded-xl dark:bg-neutral-900 dark:border-neutral-700 dark:shadow-neutral-700/70 size-2/12">
+                                <div className="bg-gray-100 border-b rounded-t-xl py-3 px-4 md:py-4 md:px-5 dark:bg-neutral-900 dark:border-neutral-700">
+                                    <p className="mt-1 text-md text-white dark:text-white">
                                     Postings made
                                     </p>
                                 </div>
-                                <div class="p-4">
-                                    <h3 class="text-3xl text-center font-bold text-gray-800 dark:text-white">
+                                <div className="p-4">
+                                    <h3 className="text-3xl text-center font-bold text-gray-800 dark:text-white">
                                     4
                                     </h3>
-                                    <p class="mt-2 text-gray-500 dark:text-neutral-400">
+                                    <p className="mt-2 text-gray-500 dark:text-neutral-400">
                                     You have 4 active postings.
                                     </p>
                                 </div>
                             </div>
 
-                            <div class="flex flex-col bg-white border shadow-sm rounded-xl dark:bg-neutral-900 dark:border-neutral-700 dark:shadow-neutral-700/70 size-2/12">
-                                <div class="bg-gray-100 border-b rounded-t-xl py-3 px-4 md:py-4 md:px-5 dark:bg-neutral-900 dark:border-neutral-700">
-                                    <p class="mt-1 text-md text-white dark:text-white">
+                            <div className="flex flex-col bg-white border shadow-sm rounded-xl dark:bg-neutral-900 dark:border-neutral-700 dark:shadow-neutral-700/70 size-2/12">
+                                <div className="bg-gray-100 border-b rounded-t-xl py-3 px-4 md:py-4 md:px-5 dark:bg-neutral-900 dark:border-neutral-700">
+                                    <p className="mt-1 text-md text-white dark:text-white">
                                     You accepted 
                                     </p>
                                 </div>
-                                <div class="p-4">
-                                    <h3 class="text-3xl text-center font-bold text-gray-800 dark:text-white">
+                                <div className="p-4">
+                                    <h3 className="text-3xl text-center font-bold text-gray-800 dark:text-white">
                                     2
                                     </h3>
-                                    <p class="mt-2 text-gray-500 dark:text-neutral-400">
+                                    <p className="mt-2 text-gray-500 dark:text-neutral-400">
                                     You found 2 students eligible.
                                     </p>
                                 </div>
                             </div>
 
-                            <div class="flex flex-col bg-white border shadow-sm rounded-xl dark:bg-neutral-900 dark:border-neutral-700 dark:shadow-neutral-700/70 size-2/12">
-                                <div class="bg-gray-100 border-b rounded-t-xl py-3 px-4 md:py-4 md:px-5 dark:bg-neutral-900 dark:border-neutral-700">
-                                    <p class="mt-1 text-md text-white dark:text-white">
+                            <div className="flex flex-col bg-white border shadow-sm rounded-xl dark:bg-neutral-900 dark:border-neutral-700 dark:shadow-neutral-700/70 size-2/12">
+                                <div className="bg-gray-100 border-b rounded-t-xl py-3 px-4 md:py-4 md:px-5 dark:bg-neutral-900 dark:border-neutral-700">
+                                    <p className="mt-1 text-md text-white dark:text-white">
                                     You rejected
                                     </p>
                                 </div>
-                                <div class="p-4">
-                                    <h3 class="text-3xl text-center font-bold text-gray-800 dark:text-white">
+                                <div className="p-4">
+                                    <h3 className="text-3xl text-center font-bold text-gray-800 dark:text-white">
                                     1
                                     </h3>
-                                    <p class="mt-2 text-gray-500 dark:text-neutral-400">
+                                    <p className="mt-2 text-gray-500 dark:text-neutral-400">
                                     Decision can be changed if active.
                                     </p>
                                 </div>
@@ -160,7 +171,7 @@ export default function ProfessorProfile() {
                         <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
                             <div>
                                 <label className="block text-gray-700">Office location:</label>
-                                <input type="text" className="w-full px-4 py-2 border rounded-lg focus:border-blue-500" />
+                                <input type="text" required className="w-full px-4 py-2 border rounded-lg focus:border-blue-500" />
                             </div>
                             <div>
                                 <label className="block text-gray-700">E-mail:</label>
@@ -386,10 +397,26 @@ export default function ProfessorProfile() {
                                 <td className="border p-2">I'm passionate about designing user-friendly interfaces and <span className='text-blue-700'>Read more...</span></td>
                                 <td className="border p-2">5</td>
                                 <td className="border border-slate-300 p-2 text-center">
-                                    <div className="flex justify-center space-x-3">
-                                    <button className="bg-green-500 text-white py-2 px-4 rounded-lg" disabled>Accepted</button>
-                                    <button className="bg-red-500 text-white py-2 px-4 rounded-lg">Reject</button>
-                                    </div>
+                                        {isEnabled? (
+                                        <div className="flex gap-2">
+                                        <span className="px-4 py-2 bg-green-200 text-white rounded-md">
+                                            Applied
+                                        </span>
+                                        <button
+                                            onClick={() => handleToggle() }
+                                            className="px-4 py-2 bg-red-500 text-white rounded-md hover:bg-red-600 transition-colors"
+                                        >
+                                            Revoke
+                                        </button>
+                                        </div>
+                                    ) : (
+                                        <button
+                                        onClick={() => handleToggle()  }
+                                        className="px-4 py-2 bg-green-500 text-white rounded-md hover:bg-green-600 transition-colors"
+                                        >
+                                        Apply
+                                        </button>
+                                    )}
                                 </td>
                                 <td className="border p-2">
                                     <div className="">
@@ -409,8 +436,8 @@ export default function ProfessorProfile() {
                                         }`}
                                     >
                                         <div className="bg-white shadow-md rounded-lg max-w-lg w-full">
-                                        <div className="p-4 border-b bg-blue-500 text-white rounded-t-lg flex justify-between items-center">
-                                            <p className="text-lg font-semibold">Sidedish Yermaneni</p>
+                                        <div className="p-4 border-b bg-black text-white rounded-t-lg flex justify-between items-center">
+                                            <p className="text-lg font-semibold">Eddie Brook</p>
                                             <button
                                             onClick={() => setIsOpen(false)}
                                             className="text-gray-300 hover:text-gray-400 focus:outline-none focus:text-gray-400"
@@ -433,7 +460,7 @@ export default function ProfessorProfile() {
                                                 <p
                                                 className={`${
                                                     message.type === "user"
-                                                    ? "bg-blue-500 text-white"
+                                                    ? "bg-black text-white"
                                                     : "bg-gray-200 text-black"
                                                 } rounded-lg py-2 px-4 inline-block`}
                                                 >
@@ -454,7 +481,7 @@ export default function ProfessorProfile() {
                                             />
                                             <button
                                             onClick={handleSendMessage}
-                                            className="bg-blue-500 text-white px-4 py-2 rounded-r-md hover:bg-blue-600 transition duration-300"
+                                            className="bg-black text-white px-4 py-2 rounded-r-md hover:bg-gray-600 transition duration-300"
                                             >
                                             Send
                                             </button>
@@ -467,6 +494,8 @@ export default function ProfessorProfile() {
                     </table>
                 </div>
             </section>
+
+            <Alert onClose={() => setIsVisible(false)} visible={isVisible} profile={false} application={false} acceptance={isAccepted}></Alert>
 
             {/* Footer */}
             <footer className="w-full bg-black text-white py-4 text-center">

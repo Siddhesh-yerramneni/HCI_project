@@ -4,15 +4,8 @@ import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 import React, { useState } from 'react';
 import { AlertCircle } from 'lucide-react';
 import { Heart } from 'lucide-react';
-import { Alert } from './Alert';
 
 export default function StudentProfile() {
-
-    const[showModal,setShowModal] = useState(false);
-    const[isProfile,setIsProfile] = useState(false);
-    const[isApplication,setIsApplication] = useState(false); 
-    const[isAcceptance,setIsAcceptance] = useState(false);
-    const[decision,setDecision] = useState(false);
 
     const [formData, setFormData] = useState({
         semester: '',
@@ -197,12 +190,9 @@ export default function StudentProfile() {
           };
         
           const handleAction = (courseId, action) => {
-
-            handleClickApplication();
             setCourses(prevCourses =>
               prevCourses.map(course => {
                 if (course.id === courseId) {
-
                   return { ...course, status: action === 'apply' ? 'applied' : 'pending' };
                 }
                 return course;
@@ -224,25 +214,8 @@ export default function StudentProfile() {
                 
 
 
-          function handleClickProfile(){
-            setShowModal(true);
-            setIsProfile(true);
 
-          }
 
-          function handleClickApplication(){
-            setIsProfile(false)
-            setShowModal(true);
-            setIsApplication(true);
-            
-          }
-
-          function handleClickAcceptance(){
-            setIsProfile(false)
-            setIsApplication(false);
-            setShowModal(true);
-            setIsAcceptance(true);
-          }
 
 
 
@@ -283,67 +256,8 @@ export default function StudentProfile() {
                 </nav>
             </header>
 
-
-            {/* Alerts */}
-
-            {/* 
-
-            <div className="space-y-5 fixed top-20 ">
-            <div className="bg-teal-50 border-t-2 border-teal-500 rounded-lg p-4" role="alert" tabindex="-1" aria-labelledby="hs-bordered-success-style-label">
-                <div className="flex">
-                <div className="shrink-0">
-       
-                    <span className="inline-flex justify-center items-center size-8 rounded-full border-4 border-teal-100 bg-teal-200 text-teal-800">
-                    <svg className="shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"></path>
-                        <path d="m9 12 2 2 4-4"></path>
-                    </svg>
-                    </span>
-          
-                </div>
-                <div className="ms-3">
-                    <h3 id="hs-bordered-success-style-label" className="text-gray-800 font-semibold">
-                    Successfully updated.
-                    </h3>
-                    <p className="text-sm text-gray-700">
-                    You have successfully updated your email preferences.
-                    </p>
-                </div>
-                </div>
-            </div>
-
-            <div className="bg-red-50 border-s-4 border-red-500 p-4" role="alert" tabindex="-1" aria-labelledby="hs-bordered-red-style-label">
-                <div className="flex">
-                <div className="shrink-0">
-  
-                    <span className="inline-flex justify-center items-center size-8 rounded-full border-4 border-red-100 bg-red-200 text-red-800">
-                    <svg className="shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M18 6 6 18"></path>
-                        <path d="m6 6 12 12"></path>
-                    </svg>
-                    </span>
-         
-                </div>
-                <div className="ms-3">
-                    <h3 id="hs-bordered-red-style-label" className="text-gray-800 font-semibold">
-                    Error!
-                    </h3>
-                    <p className="text-sm text-gray-700">
-                    Your purchase has been declined.
-                    </p>
-                </div>
-                </div>
-            </div>
-            </div>
-            */}
-
-            <Alert onClose={() => setShowModal(false)} visible={showModal} profile={isProfile} application={isApplication} acceptance={isAcceptance}></Alert>
-
-            
-
-
             {/* Profile Info */}
-            <section className="p-6 mx-auto mt-4 w-full max-w-7xl bg-gray-300 rounded-lg shadow-lg break-after-auto">
+            <section className="p-6 mx-auto mt-4 w-full max-w-7xl bg-gray-300 rounded-lg shadow-lg">
                 <h2 className="text-2xl text-center font-semibold text-gray-800">Siddhesh's Profile</h2>
                 <p className="text-center text-black mt-2">Keep your profile updated for better chances in getting the position and communication. See available postings below.</p>
                 <p className="text-center text-black mb-2">See available postings below.</p>
@@ -354,70 +268,70 @@ export default function StudentProfile() {
                                 alt="Student" className="h-32 w-32 rounded-full shadow-lg" />
                         </div>
                         <div className='flex flex-row gap-6 justify-evenly'>
-                            <div className="flex flex-col bg-white border shadow-sm rounded-xl dark:bg-neutral-900 dark:border-neutral-700 dark:shadow-neutral-700/70 size-2/12">
-                                <div className="bg-gray-100 border-b rounded-t-xl py-3 px-4 md:py-4 md:px-5 dark:bg-neutral-900 dark:border-neutral-700">
-                                    <p className="mt-1 text-md text-white dark:text-white">
+                            <div class="flex flex-col bg-white border shadow-sm rounded-xl dark:bg-neutral-900 dark:border-neutral-700 dark:shadow-neutral-700/70 size-2/12">
+                                <div class="bg-gray-100 border-b rounded-t-xl py-3 px-4 md:py-4 md:px-5 dark:bg-neutral-900 dark:border-neutral-700">
+                                    <p class="mt-1 text-md text-white dark:text-white">
                                     Applied
                                     </p>
                                 </div>
-                                <div className="p-4">
-                                    <h3 className="text-3xl text-center font-bold text-gray-800 dark:text-white">
+                                <div class="p-4">
+                                    <h3 class="text-3xl text-center font-bold text-gray-800 dark:text-white">
                                     3
                                     </h3>
-                                    <p className="mt-2 text-gray-500 dark:text-neutral-400">
+                                    <p class="mt-2 text-gray-500 dark:text-neutral-400">
                                     You have applied for 3 courses.
                                     </p>
                                 </div>
                             </div>
 
-                            <div className="flex flex-col bg-white border shadow-sm rounded-xl dark:bg-neutral-900 dark:border-neutral-700 dark:shadow-neutral-700/70 size-2/12">
-                                <div className="bg-gray-100 border-b rounded-t-xl py-3 px-4 md:py-4 md:px-5 dark:bg-neutral-900 dark:border-neutral-700">
-                                    <p className="mt-1 text-md text-white dark:text-white">
+                            <div class="flex flex-col bg-white border shadow-sm rounded-xl dark:bg-neutral-900 dark:border-neutral-700 dark:shadow-neutral-700/70 size-2/12">
+                                <div class="bg-gray-100 border-b rounded-t-xl py-3 px-4 md:py-4 md:px-5 dark:bg-neutral-900 dark:border-neutral-700">
+                                    <p class="mt-1 text-md text-white dark:text-white">
                                     Accepted by professor
                                     </p>
                                 </div>
-                                <div className="p-4">
-                                    <h3 className="text-3xl text-center font-bold text-gray-800 dark:text-white">
+                                <div class="p-4">
+                                    <h3 class="text-3xl text-center font-bold text-gray-800 dark:text-white">
                                     1
                                     </h3>
-                                    <p className="mt-2 text-gray-500 dark:text-neutral-400">
+                                    <p class="mt-2 text-gray-500 dark:text-neutral-400">
                                     Please review and make a decision.
                                     </p>
                                 </div>
                             </div>
 
-                            <div className="flex flex-col bg-white border shadow-sm rounded-xl dark:bg-neutral-900 dark:border-neutral-700 dark:shadow-neutral-700/70 size-2/12">
-                                <div className="bg-gray-100 border-b rounded-t-xl py-3 px-4 md:py-4 md:px-5 dark:bg-neutral-900 dark:border-neutral-700">
-                                    <p className="mt-1 text-md text-white dark:text-white">
+                            <div class="flex flex-col bg-white border shadow-sm rounded-xl dark:bg-neutral-900 dark:border-neutral-700 dark:shadow-neutral-700/70 size-2/12">
+                                <div class="bg-gray-100 border-b rounded-t-xl py-3 px-4 md:py-4 md:px-5 dark:bg-neutral-900 dark:border-neutral-700">
+                                    <p class="mt-1 text-md text-white dark:text-white">
                                     You accepted 
                                     </p>
                                 </div>
-                                <div className="p-4">
-                                    <h3 className="text-3xl text-center font-bold text-gray-800 dark:text-white">
+                                <div class="p-4">
+                                    <h3 class="text-3xl text-center font-bold text-gray-800 dark:text-white">
                                     1
                                     </h3>
-                                    <p className="mt-2 text-gray-500 dark:text-neutral-400">
+                                    <p class="mt-2 text-gray-500 dark:text-neutral-400">
                                     Please follow the offer letter instructions.
                                     </p>
                                 </div>
                             </div>
 
-                            <div className="flex flex-col bg-white border shadow-sm rounded-xl dark:bg-neutral-900 dark:border-neutral-700 dark:shadow-neutral-700/70 size-2/12">
-                                <div className="bg-gray-100 border-b rounded-t-xl py-3 px-4 md:py-4 md:px-5 dark:bg-neutral-900 dark:border-neutral-700">
-                                    <p className="mt-1 text-md text-white dark:text-white">
+                            <div class="flex flex-col bg-white border shadow-sm rounded-xl dark:bg-neutral-900 dark:border-neutral-700 dark:shadow-neutral-700/70 size-2/12">
+                                <div class="bg-gray-100 border-b rounded-t-xl py-3 px-4 md:py-4 md:px-5 dark:bg-neutral-900 dark:border-neutral-700">
+                                    <p class="mt-1 text-md text-white dark:text-white">
                                     You rejected
                                     </p>
                                 </div>
-                                <div className="p-4">
-                                    <h3 className="text-3xl text-center font-bold text-gray-800 dark:text-white">
+                                <div class="p-4">
+                                    <h3 class="text-3xl text-center font-bold text-gray-800 dark:text-white">
                                     1
                                     </h3>
-                                    <p className="mt-2 text-gray-500 dark:text-neutral-400">
+                                    <p class="mt-2 text-gray-500 dark:text-neutral-400">
                                     Decision can be changed if active.
                                     </p>
                                 </div>
                             </div>
-                        </div>
+                </div>
                         <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
                             <div>
                                 <label className="block text-gray-700">Semester Joined:</label>
@@ -522,7 +436,7 @@ export default function StudentProfile() {
 
                             </div>
                         </div>
-                        <button type="submit" className="w-full bg-black text-white py-2 rounded-lg font-semibold hover:bg-gray-800 transition"  onClick={handleClickProfile}>Update Profile</button>
+                        <button type="submit" className="w-full bg-black text-white py-2 rounded-lg font-semibold hover:bg-gray-800 transition">Update Profile</button>
                     </form>
                 </div>
             </section>
@@ -622,7 +536,7 @@ export default function StudentProfile() {
 
 
 
-            <div className=" p-4 mx-20 bg-gray-200 rounded-lg w-auto my-10">
+            <div className="p-6 bg-gray-100 rounded-lg">
                 <h2 className="text-2xl font-bold text-center mb-6">Apply for Available Courses</h2>
                 
                 <div className="overflow-x-auto">
@@ -716,7 +630,7 @@ export default function StudentProfile() {
 
 
             {/* Course Application Table */}
-            <section className="mx-auto my-4 max-w-7xl p-6 bg-gray-200 rounded-lg shadow-lg">
+            <section className="mx-auto my-8 max-w-7xl p-6 bg-gray-300 rounded-lg shadow-lg">
                 <h3 className="text-xl font-semibold text-black mb-4 text-center ">Manage your application decisions</h3>
                 {/* Checkbox and Sort Container */}
               <div className="flex justify-between w-full items-center mb-6">
@@ -761,26 +675,10 @@ export default function StudentProfile() {
                                 </td>
                                 {/* Student Decision */}
                                 <td className="border border-slate-300 p-2 text-center">
-                                {decision? (
-                                <div className="flex gap-2">
-                                <span className="px-4 py-2 bg-green-200 text-white rounded-md">
-                                    Applied
-                                </span>
-                                <button
-                                    onClick={() => setDecision(false)}
-                                    className="px-4 py-2 bg-red-500 text-white rounded-md hover:bg-red-600 transition-colors"
-                                >
-                                    Revoke
-                                </button>
-                                </div>
-                            ) : (
-                                <button
-                                onClick={() => setDecision(true)}
-                                className="px-4 py-2 bg-green-500 text-white rounded-md hover:bg-green-600 transition-colors"
-                                >
-                                Apply
-                                </button>
-                            )}
+                                    <div className="flex justify-center space-x-3">
+                                    <button className="bg-green-500 text-white py-2 px-4 rounded-lg" disabled>Accepted</button>
+                                    <button className="bg-red-500 text-white py-2 px-4 rounded-lg">Reject</button>
+                                    </div>
                                 </td>
                             </tr>
                         </tbody>

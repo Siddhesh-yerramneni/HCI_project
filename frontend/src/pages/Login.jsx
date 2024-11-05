@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom';
+import { Dummy } from './dummy';
 
 export const Login = () => {
 
@@ -126,7 +127,7 @@ export const Login = () => {
   {/* ------------------------------------------------------------------------------------------------------------------ */}
 
  
-  
+  <Dummy onClose={() => setShowModal(false)} visible={showModal}></Dummy>
 
     
 
