@@ -27,21 +27,22 @@ export default function ProfessorProfile() {
               </div>
             </div>
             <div className="flex space-x-6">
-              <button className="text-white text-lg hover:text-blue-600 transition">Logout</button>
               <button className="text-white text-lg hover:text-blue-600 transition">About</button>
               <button className="text-white text-lg hover:text-blue-600 transition">Help</button>
               <button className="text-white text-lg hover:text-blue-600 transition">Contact</button>
+              <button className="text-white text-lg hover:text-blue-600 transition">Logout</button>
             </div>
           </header>
     
           {/* Main Content */}
-          <span className='text-2xl text-center font-semibold text-black bg-slate-400 p-3'>Professor's Profile</span>
+          <span className='text-2xl text-center font-semibold text-black bg-slate-200 p-3'>Professor's Profile</span>
+          <span className='text-lg text-center font-medium text-black bg-slate-200'>Welcome Professor! Please keep your profile updated for better communication. Scroll down to manage the applications.</span>
 
           {/*Cannot post error - number of people*/}
-          <div class="bg-blue-100 border-t border-b border-red-700 text-red-700 px-4 py-3" role="alert">
+          {/* <div class="bg-blue-100 border-t border-b border-red-700 text-red-700 px-4 py-3" role="alert">
             <p class="font-bold text-lg text-center">Cannot post the request</p>
             <p class="text-md text-center">People has to be greater than 1.</p>
-          </div>
+          </div> */}
 
           {/* Cannot post error - number of hours */}
           {/* <div class="bg-blue-100 border-t border-b border-red-700 text-red-700 px-4 py-3" role="alert">
@@ -70,8 +71,10 @@ export default function ProfessorProfile() {
           <div className='flex-grow items-center justify-center bg-zinc-200'>
             <div className='flex flex-col items-center mt-4'>
                 <form className='flex flex-grow flex-col w-1/3 text-xl font-semibold p-3'>
+                <div>
                   <img src="https://cdn-icons-png.freepik.com/256/2798/2798310.png?semt=ais_hybrid" 
                   alt="student image" srcset="" className='h-40 w-40 rounded-full ml-64' />
+                </div>
                   <div className='mb-1 flex flex-col mt-2'>
                     <label className='mb-2'>Enter office location</label>
                     <input type="text" className='p-2'/>

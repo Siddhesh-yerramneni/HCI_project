@@ -1,420 +1,187 @@
-import React from 'react'
+import React from 'react';
 import { Link } from 'react-router-dom';
-import { FaArrowLeft, FaArrowRight } from 'react-icons/fa'; // Import icons
+import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 
 export default function StudentProfile() {
     return (
-        <div className="min-h-screen flex flex-col relative">
-          {/* Left Arrow */}
-          <Link to="/previous-page" className="absolute left-24 top-1/2 transform -translate-y-1/2 bg-black text-white p-3 rounded-full hover:bg-gray-800 transition">
-            <FaArrowLeft size={40} />
-          </Link>
-    
-          {/* Right Arrow */}
-          <Link to="/next-page" className="absolute right-24 top-1/2 transform -translate-y-1/2 bg-black text-white p-3 rounded-full hover:bg-gray-800 transition">
-            <FaArrowRight size={40} />
-          </Link>
-    
-          {/* Header */}
-          <header className="w-full bg-black py-3 shadow-md flex justify-between items-center px-8">
-            <div className="flex items-center">
-                <Link to='/'>
-          <         img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-7DjAZZLWBGma-Vm01k1yr2ErdOngnGFEJg&s"
-                    alt="University Logo" className="h-12 w-12 mr-4" />
-                </Link>
-              <div>
-                <h1 className="text-2xl font-bold text-white">TA Assignment System (TAAS)</h1>
-                <p className="text-md text-white">University of Florida</p>
-              </div>
-            </div>
-            <div className="flex space-x-6">
-              <button className="text-white text-lg hover:text-blue-600 transition">Siddhesh</button>
-              <button className="text-white text-lg hover:text-blue-600 transition">About</button>
-              <button className="text-white text-lg hover:text-blue-600 transition">Help</button>
-              <button className="text-white text-lg hover:text-blue-600 transition">Contact</button>
-            </div>
-          </header>
-    
-          {/* Main Content */}
-          <span className='text-2xl text-center font-semibold text-black bg-slate-400 p-3'>Siddhesh's Profile</span>
-          <span className='text-lg text-center font-medium text-black bg-slate-400'>Welcome Siddhesh! Please keep your profile updated for better communication. Scroll down to see the current available postings to apply.</span>
-          
-          {/*Profile updated succesfully*/}
-          <div class="bg-blue-100 border-t border-b border-green-700 text-green-700 px-4 py-3" role="alert">
-            <p class="font-bold text-lg text-center">Profile updated succesfully</p>
-            <p class="text-md text-center">Thank you for updating the details.</p>
-          </div>
+        <div className="min-h-screen flex flex-col relative bg-gray-50">
+            {/* Left Arrow */}
+            <Link to="/previous-page" className="absolute left-6 top-1/2 transform -translate-y-1/2 bg-black text-white p-3 rounded-full hover:bg-gray-800 transition">
+                <FaArrowLeft size={30} />
+            </Link>
 
-          {/* Cannot update the profile */}
-          {/* <div class="bg-blue-100 border-t border-b border-red-700 text-red-700 px-4 py-3" role="alert">
-            <p class="font-bold text-lg text-center">Profile update failed</p>
-            <p class="text-md text-center">Incorrect UFID. Please update the correct UFID.</p>
-          </div> */}
+            {/* Right Arrow */}
+            <Link to="/next-page" className="absolute right-6 top-1/2 transform -translate-y-1/2 bg-black text-white p-3 rounded-full hover:bg-gray-800 transition">
+                <FaArrowRight size={30} />
+            </Link>
 
-          {/* Cannot update the profile as exceeded 20hrs */}
-          {/* <div class="bg-blue-100 border-t border-b border-red-700 text-red-700 px-4 py-3" role="alert">
-            <p class="font-bold text-lg text-center">Profile update failed</p>
-            <p class="text-md text-center">Being an international student, you are capped at 20hrs.</p>
-          </div> */}
-
-          {/* Cannot update the profile as exceeded 20hrs */}
-          {/* <div class="bg-blue-100 border-t border-b border-red-700 text-red-700 px-4 py-3" role="alert">
-            <p class="font-bold text-lg text-center">Profile update failed</p>
-            <p class="text-md text-center">GPA has to be in range of 0-4.</p>
-          </div> */}
-
-          {/*Applied succesfully*/}
-          {/* <div class="bg-blue-100 border-t border-b border-green-700 text-green-700 px-4 py-3" role="alert">
-            <p class="font-bold text-lg text-center">Application sent succesfully</p>
-            <p class="text-md text-center">Thank you for applying. An update will be delivered soon!</p>
-          </div> */}
-
-          <div className='flex-grow items-center justify-center bg-zinc-200'>
-            <div className='flex flex-col items-center mt-4'>
-                <form className='flex flex-grow flex-col w-1/3 text-xl font-semibold p-3'>
-                  <img src="https://static.vecteezy.com/system/resources/thumbnails/007/469/004/small_2x/graduated-student-in-simple-flat-personal-profile-icon-or-symbol-people-concept-illustration-vector.jpg" 
-                  alt="student image" srcset="" className='h-40 w-40 rounded-full ml-72' />
-                  <div className="mb-1">
-                  <label className="block text-black font-semibold mb-2">Semester joined:</label>
-                  <select
-                    name="category"
-                    id="category"
-                    className="w-full px-4 py-2 border border-slate-300 rounded-lg"
-                    required
-                  >
-              <option disabled value="">Select...</option>
-              <option value="Fiction">Fall 2023</option>
-              <option value="Non-fiction">Spring 2023</option>
-              <option value="Sci-fi">Summer 2023</option>
-            </select>
-            </div>
-            <div className='mb-1 flex flex-col mt-1'>
-            <label>Enter CGPA</label>
-            <input type="number" className='p-2'/>
-            </div>
-            <div className='mb-1 flex flex-col mt-1'>
-            <label>Enter UFID</label>
-            <input type="text" className='p-2' placeholder='Enter without hyphen'/>
-            </div>
-            <div className="mb-1">
-                  <label className="block text-black font-semibold mb-2">Are you an international student:</label>
-                  <select
-                    name="category"
-                    id="category"
-                    className="w-full px-4 py-2 border border-slate-300 rounded-lg"
-                    required
-                  >
-              <option disabled value="">Select...</option>
-              <option value="Yes">Yes</option>
-              <option value="No">No</option>
-            </select>
-          </div>
-          <div className='mb-1 flex flex-col mt-1'>
-            <label>Desired number of working hours</label>
-            <input type="number" className='p-2' placeholder='For internationals maximum limit is 20hours per week'/>
-          </div>
-          <div className='mb-1 flex flex-col mt-1'>
-            <label>Upload resume</label>
-            <input type="file" className='p-2'/>
-          </div>
-
-            <div className='flex flex-col mt-3'>
-              {/* <button className='bg-gray-500 rounded-lg p-2'>Update</button> */}
-              <button className='bg-gray-500 rounded-lg p-2'>Cancel Update</button>
-            </div>
-                </form>
-            </div>
-          </div>
-          
-          <span className='text-2xl text-center font-semibold text-white bg-black p-3'>Apply for the availble courses: </span>
-          <div className="overflow-x-auto">
-            <table className="min-w-full border-collapse border border-slate-400">
-              <thead className="bg-slate-400 font-semibold text-xl">
-                <tr>
-                  <th className='border border-slate-300 p-2'>Course Name</th>
-                  <th className="border border-slate-300 p-2">Course Taken</th>
-                  <th className="border border-slate-300 p-2">Grade Achieved</th>
-                  <th className="border border-slate-300 p-2">Willing to do TA?</th>
-                  <th className="border border-slate-300 p-2">Preference Level</th>
-                  <th className="border border-slate-300 p-2">Comments</th>
-                  <th className='border border-slate-300 p-2'>Actions</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  {/* Course Selection */}
-                  <td className='text-center'> 
-                    Course A
-                  </td>
-                  <td className="border border-slate-300 p-2">
-                    <select
-                      name="course"
-                      id="course"
-                      className="w-full px-4 py-2 border border-slate-300 rounded-lg"
-                      required
-                    >
-                      <option value="">Select..</option>
-                      <option value="A">Yes</option>
-                      <option value="B">No</option>
-                    </select>
-                  </td>
-
-                  {/* Grade Input */}
-                  <td className="border border-slate-300 p-2">
-                    <input
-                      type="number"
-                      placeholder="Enter grade"
-                      className="w-full px-4 py-2 border border-slate-300 rounded-lg"
-                    />
-                  </td>
-
-                  {/* Willingness to be TA */}
-                  <td className="border border-slate-300 p-2">
-                    <select
-                      name="willingness"
-                      id="willingness"
-                      className="w-full px-4 py-2 border border-slate-300 rounded-lg"
-                      required
-                    >
-                      <option value="">Select...</option>
-                      <option value="Yes">Yes</option>
-                      <option value="No">No</option>
-                    </select>
-                  </td>
-
-                  {/* Preference Level Buttons */}
-                  <td className="border border-slate-300 p-2">
-                    <div className="flex items-center justify-center space-x-2">
-                      <button type="button" className="text-red-500">
-                        <svg
-                          className="w-6 h-6"
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 16 16"
-                          fill="currentColor"
-                        >
-                          <path
-                            fillRule="evenodd"
-                            d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"
-                          ></path>
-                        </svg>
-                      </button>
-
-                      <button type="button" className="text-red-500">
-                        <svg
-                          className="w-6 h-6"
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 16 16"
-                          fill="currentColor"
-                        >
-                          <path
-                            fillRule="evenodd"
-                            d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"
-                          ></path>
-                        </svg>
-                      </button>
-
-                      <button type="button" className="text-red-500">
-                        <svg
-                          className="w-6 h-6"
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 16 16"
-                          fill="currentColor"
-                        >
-                          <path
-                            fillRule="evenodd"
-                            d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"
-                          ></path>
-                        </svg>
-                      </button>
-
-                      <button type="button" className="text-red-500">
-                        <svg
-                          className="w-6 h-6"
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 16 16"
-                          fill="currentColor"
-                        >
-                          <path
-                            fillRule="evenodd"
-                            d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"
-                          ></path>
-                        </svg>
-                      </button>
-
-                      <button type="button" className="text-gray-300 hover:text-red-500">
-                        <svg
-                          className="w-6 h-6"
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 16 16"
-                          fill="currentColor"
-                        >
-                          <path
-                            fillRule="evenodd"
-                            d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"
-                          ></path>
-                        </svg>
-                      </button>
+            {/* Header */}
+            <header className="sticky top-0 w-full bg-black py-3 shadow-md flex justify-between items-center px-8 z-10">
+                <div className="flex items-center">
+                    <Link to='/'>
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-7DjAZZLWBGma-Vm01k1yr2ErdOngnGFEJg&s"
+                            alt="University Logo" className="h-12 w-12 mr-4 rounded-full" />
+                    </Link>
+                    <div>
+                        <h1 className="text-xl font-bold text-white">TA Assignment System</h1>
+                        <p className="text-sm text-gray-300">University of Florida</p>
                     </div>
-                  </td>
+                </div>
+                <nav className="flex space-x-4">
+                    <Link to="/" className="text-white hover:text-blue-500 transition">About</Link>
+                    <Link to="/" className="text-white hover:text-blue-500 transition">Help</Link>
+                    <Link to="/" className="text-white hover:text-blue-500 transition">Contact</Link>
+                    <Link to="/" className="text-white hover:text-blue-500 transition">Logout</Link>
+                </nav>
+            </header>
 
-                  {/* Comments Input */}
-                  <td className="border border-slate-300 p-2">
-                    <input
-                      type="text"
-                      placeholder="Comments"
-                      className="w-full px-4 py-2 border border-slate-300 rounded-lg"
-                    />
-                  </td>
+            {/* Profile Info */}
+            <section className="p-6 mx-auto mt-4 w-full max-w-7xl bg-gray-300 rounded-lg shadow-lg">
+                <h2 className="text-2xl text-center font-semibold text-gray-800">Siddhesh's Profile</h2>
+                <p className="text-center text-black mt-2">Keep your profile updated for better chances in getting the position and communication. See available postings below.</p>
+                <p className="text-center text-black mb-2">See available postings below.</p>
 
-                  <td className='flex justify-center gap-4'>
-                    <button className='bg-green-500 p-3 rounded-lg'>
-                      Applied
-                    </button>
-                    <button className='bg-red-400 p-3 rounded-lg'>
-                      Revoke
-                    </button>
-                  </td>
-                </tr>
-              </tbody>
-              <tbody>
-                <tr>
-                  {/* Course Selection */}
-                  <td className='text-center'> 
-                    Course A
-                  </td>
-                  <td className="border border-slate-300 p-2">
-                    <select
-                      name="course"
-                      id="course"
-                      className="w-full px-4 py-2 border border-slate-300 rounded-lg"
-                      required
-                    >
-                      <option value="">Select..</option>
-                      <option value="A">Yes</option>
-                      <option value="B">No</option>
-                    </select>
-                  </td>
+                <div className="flex flex-col items-center">
+                    <form className="w-full space-y-4">
+                        <div className="flex justify-center">
+                            <img src="https://static.vecteezy.com/system/resources/thumbnails/007/469/004/small_2x/graduated-student-in-simple-flat-personal-profile-icon-or-symbol-people-concept-illustration-vector.jpg"
+                                alt="Student" className="h-32 w-32 rounded-full shadow-lg" />
+                        </div>
+                        <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+                            <div>
+                                <label className="block text-gray-700">Semester Joined:</label>
+                                <select className="w-full px-4 py-2 border rounded-lg focus:border-blue-500">
+                                    <option>Select...</option>
+                                    <option>Fall 2023</option>
+                                    <option>Spring 2023</option>
+                                    <option>Summer 2023</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label className="block text-gray-700">Enter CGPA:</label>
+                                <input type="number" className="w-full px-4 py-2 border rounded-lg focus:border-blue-500" />
+                            </div>
+                            <div>
+                                <label className="block text-gray-700">Enter UFID:</label>
+                                <input type="text" placeholder="Enter without hyphen" className="w-full px-4 py-2 border rounded-lg focus:border-blue-500" />
+                            </div>
+                            <div>
+                                <label className="block text-gray-700">International Student:</label>
+                                <select className="w-full px-4 py-2 border rounded-lg focus:border-blue-500">
+                                    <option>Select...</option>
+                                    <option>Yes</option>
+                                    <option>No</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label className="block text-gray-700">Desired Working Hours:</label>
+                                <input type="number" placeholder="Max 20 hrs for international students" className="w-full px-4 py-2 border rounded-lg focus:border-blue-500" />
+                            </div>
+                            <div>
+                                <label className="block text-gray-700">Upload Resume:</label>
+                                <input type="file" className="w-full px-4 py-2 border rounded-lg focus:border-blue-500" />
+                            </div>
+                        </div>
+                        <button className="w-full bg-black text-white py-2 rounded-lg font-semibold hover:bg-gray-800 transition">Update Profile</button>
+                    </form>
+                </div>
+            </section>
 
-                  {/* Grade Input */}
-                  <td className="border border-slate-300 p-2">
-                    <input
-                      type="number"
-                      placeholder="Enter grade"
-                      className="w-full px-4 py-2 border border-slate-300 rounded-lg"
-                    />
-                  </td>
+            {/* Course Application Table */}
+            <section className="mx-auto my-8 max-w-7xl p-6 bg-gray-300 rounded-lg shadow-lg">
+                <h3 className="text-xl font-semibold text-black mb-4 text-center ">Apply for Available Courses</h3>
+                <div className="overflow-x-auto">
+                    <table className="min-w-full border rounded-lg">
+                        <thead className="bg-black text-lg font-semibold text-white">
+                            <tr>
+                                <th className="border p-2">Course Name</th>
+                                <th className="border p-2">Professor Name</th>
+                                <th className="border p-2">Taken?</th>
+                                <th className="border p-2">Grade</th>
+                                <th className="border p-2">Preference</th>
+                                <th className="border p-2">Comments</th>
+                                <th className="border p-2">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody className=''>
+                            <tr className="text-center text-black">
+                                <td className="border p-2">Course A</td>
+                                <td className="border p-2">Dr Cognition</td>
+                                <td className="border p-2">
+                                    <select className="w-full px-2 py-1 border rounded-lg focus:border-blue-500">
+                                        <option>Select...</option>
+                                        <option>Yes</option>
+                                        <option>No</option>
+                                    </select>
+                                </td>
+                                <td className="border p-2">
+                                <select className="w-full px-2 py-1 border rounded-lg focus:border-blue-500">
+                                        <option>Select...</option>
+                                        <option>A</option>
+                                        <option>A-</option>
+                                        <option>B+</option>
+                                        <option>B-</option>
+                                    </select>
+                                </td>
+                                <td className="border p-2 flex items-center justify-center space-x-1 bg-white mt-2">
+                                    {[...Array(5)].map((_, i) => (
+                                        <button key={i} className="text-red-500 focus:outline-none">
+                                            <svg className="w-4 h-4" viewBox="0 0 16 16" fill="currentColor">
+                                                <path d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z" />
+                                            </svg>
+                                        </button>
+                                    ))}
+                                </td>
+                                <td className="border p-2"><input type="text" className="w-full border rounded-lg px-2 py-1 focus:border-blue-500" /></td>
+                                <td className="border p-2 space-x-2 flex flex-row justify-around">
+                                    <button className="bg-green-500 text-white px-3 py-1 rounded-lg hover:bg-green-600">Applied</button>
+                                    <button className="bg-red-400 text-white px-3 py-1 rounded-lg hover:bg-red-500">Revoke</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                        <tbody className=''>
+                            <tr className="text-center text-black">
+                                <td className="border p-2">Course A</td>
+                                <td className="border p-2">Dr Cognition</td>
+                                <td className="border p-2">
+                                    <select className="w-full px-2 py-1 border rounded-lg focus:border-blue-500">
+                                        <option>Select...</option>
+                                        <option>Yes</option>
+                                        <option>No</option>
+                                    </select>
+                                </td>
+                                <td className="border p-2">
+                                <select className="w-full px-2 py-1 border rounded-lg focus:border-blue-500">
+                                        <option>Select...</option>
+                                        <option>A</option>
+                                        <option>A-</option>
+                                        <option>B+</option>
+                                        <option>B-</option>
+                                    </select>
+                                </td>
+                                <td className="border p-2 flex items-center justify-center space-x-1 bg-white mt-2">
+                                    {[...Array(5)].map((_, i) => (
+                                        <button key={i} className="text-red-500 focus:outline-none">
+                                            <svg className="w-4 h-4" viewBox="0 0 16 16" fill="currentColor">
+                                                <path d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z" />
+                                            </svg>
+                                        </button>
+                                    ))}
+                                </td>
+                                <td className="border p-2"><input type="text" className="w-full border rounded-lg px-2 py-1 focus:border-blue-500" /></td>
+                                <td className="border p-2 space-x-2 flex flex-row justify-around">
+                                    <button className="bg-green-500 text-white px-3 py-1 rounded-lg hover:bg-green-600">Apply</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
 
-                  {/* Willingness to be TA */}
-                  <td className="border border-slate-300 p-2">
-                    <select
-                      name="willingness"
-                      id="willingness"
-                      className="w-full px-4 py-2 border border-slate-300 rounded-lg"
-                      required
-                    >
-                      <option value="">Select...</option>
-                      <option value="Yes">Yes</option>
-                      <option value="No">No</option>
-                    </select>
-                  </td>
-
-                  {/* Preference Level Buttons */}
-                  <td className="border border-slate-300 p-2">
-                    <div className="flex items-center justify-center space-x-2">
-                      <button type="button" className="text-red-500">
-                        <svg
-                          className="w-6 h-6"
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 16 16"
-                          fill="currentColor"
-                        >
-                          <path
-                            fillRule="evenodd"
-                            d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"
-                          ></path>
-                        </svg>
-                      </button>
-
-                      <button type="button" className="text-red-500">
-                        <svg
-                          className="w-6 h-6"
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 16 16"
-                          fill="currentColor"
-                        >
-                          <path
-                            fillRule="evenodd"
-                            d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"
-                          ></path>
-                        </svg>
-                      </button>
-
-                      <button type="button" className="text-red-500">
-                        <svg
-                          className="w-6 h-6"
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 16 16"
-                          fill="currentColor"
-                        >
-                          <path
-                            fillRule="evenodd"
-                            d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"
-                          ></path>
-                        </svg>
-                      </button>
-
-                      <button type="button" className="text-red-500">
-                        <svg
-                          className="w-6 h-6"
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 16 16"
-                          fill="currentColor"
-                        >
-                          <path
-                            fillRule="evenodd"
-                            d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"
-                          ></path>
-                        </svg>
-                      </button>
-
-                      <button type="button" className="text-gray-300 hover:text-red-500">
-                        <svg
-                          className="w-6 h-6"
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 16 16"
-                          fill="currentColor"
-                        >
-                          <path
-                            fillRule="evenodd"
-                            d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"
-                          ></path>
-                        </svg>
-                      </button>
-                    </div>
-                  </td>
-
-                  {/* Comments Input */}
-                  <td className="border border-slate-300 p-2">
-                    <input
-                      type="text"
-                      placeholder="Comments"
-                      className="w-full px-4 py-2 border border-slate-300 rounded-lg"
-                    />
-                  </td>
-
-                  <td className='flex flex-row justify-center'>
-                    <button className='bg-slate-400 p-3 rounded-lg'>
-                      Apply
-                    </button>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          {/* Footer */}
-          <footer className="w-full bg-black text-white py-3 text-center">
-            <p>© 2024 University of Florida. All rights reserved.</p>
-          </footer>
+            {/* Footer */}
+            <footer className="w-full bg-black text-white py-4 text-center">
+                <p>© 2024 University of Florida. All rights reserved.</p>
+            </footer>
         </div>
-      );
+    );
 }
