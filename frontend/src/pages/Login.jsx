@@ -1,15 +1,13 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom';
 import { Dummy } from './dummy';
 
 export const Login = () => {
 
-function handleSubmit(event){
-    event.preventDefault();
-    console.log(event.target.email.value);
-}
 
+    const [showModal, setShowModal] = useState(false);
 
+    
 
 
   return (
@@ -63,7 +61,7 @@ function handleSubmit(event){
     </div>
 
     <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-      <form onSubmit={handleSubmit} className="space-y-6">
+      <div className="space-y-6">
         <div>
           <label htmlFor="email" className="block text-sm/6 font-medium text-gray-900">
             Email address
@@ -109,11 +107,12 @@ function handleSubmit(event){
           <button
             type="submit"
             className="flex w-full justify-center rounded-md bg-black px-3 py-1.5 text-sm/6 font-semibold text-white shadow-sm hover:bg-black focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
+            onClick={() => setShowModal(true)}
           >
             Log in
           </button>
         </div>
-      </form>
+      </div>
       {/* 
       <p className="mt-10 text-center text-sm/6 text-gray-500">
         Not a member?{' '}
@@ -127,7 +126,7 @@ function handleSubmit(event){
 
   {/* ------------------------------------------------------------------------------------------------------------------ */}
 
-  <Dummy/>
+  <Dummy onClose={() => setShowModal(false)} visible={showModal}/>
   
 
     

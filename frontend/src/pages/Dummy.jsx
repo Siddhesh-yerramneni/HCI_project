@@ -1,11 +1,20 @@
-import React from "react";
-
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom';
 
-export const Dummy = () => {
-  return (
+export const Dummy = (props) => {
+
+    console.log(props.visible)
+
+    if (!props.visible) return null; 
+    
+    function handleOnClose(event){
+        if (event.target.id === "container") props.onClose();
+    }
+
+
+    return (
     <>
-      <div className="fixed inset-0 bg-black bg-opacity-30 backdrop-blur-sm flex justify-center items-center">
+      <div id = "container" onClick={handleOnClose} className="fixed inset-0 bg-black bg-opacity-30 backdrop-blur-sm flex justify-center items-center">
         <div className="items-center justify-center max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
         <div className="grid grid-cols-3 gap-4">
 

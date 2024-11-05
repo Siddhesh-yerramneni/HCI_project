@@ -50,11 +50,11 @@ export default function ProfessorProfile() {
                         <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
                             <div>
                                 <label className="block text-gray-700">Office location:</label>
-                                <input type="number" className="w-full px-4 py-2 border rounded-lg focus:border-blue-500" />
+                                <input type="text" className="w-full px-4 py-2 border rounded-lg focus:border-blue-500" />
                             </div>
                             <div>
                                 <label className="block text-gray-700">E-mail:</label>
-                                <input type="number" className="w-full px-4 py-2 border rounded-lg focus:border-blue-500" />
+                                <input type="email" required className="w-full px-4 py-2 border rounded-lg focus:border-blue-500" />
                             </div>
                         </div>
                         <button className="w-full bg-black text-white py-2 rounded-lg font-semibold hover:bg-gray-800 transition">Update Profile</button>
