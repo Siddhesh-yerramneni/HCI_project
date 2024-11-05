@@ -1,93 +1,105 @@
-import React from 'react'
+import React from 'react';
 import { Link } from 'react-router-dom';
-import { FaArrowLeft, FaArrowRight } from 'react-icons/fa'; // Import icons
-export default function ProfessorLogin() {
-    return (
-        <div className="min-h-screen flex flex-col relative">
-          {/* Left Arrow */}
-          <Link to="/previous-page" className="absolute left-24 top-1/2 transform -translate-y-1/2 bg-black text-white p-3 rounded-full hover:bg-gray-800 transition">
-            <FaArrowLeft size={40} />
-          </Link>
-    
-          {/* Right Arrow */}
-          <Link to="/next-page" className="absolute right-24 top-1/2 transform -translate-y-1/2 bg-black text-white p-3 rounded-full hover:bg-gray-800 transition">
-            <FaArrowRight size={40} />
-          </Link>
-    
-          {/* Header */}
-          <header className="w-full bg-black py-3 shadow-md flex justify-between items-center px-8">
-            <div className="flex items-center">
-                <Link to='/'>
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-7DjAZZLWBGma-Vm01k1yr2ErdOngnGFEJg&s"
-                    alt="University Logo" className="h-12 w-12 mr-4" />
-                </Link>
-              <div>
-                <h1 className="text-2xl font-bold text-white">TA Assignment System (TAAS)</h1>
-                <p className="text-md text-white">University of Florida</p>
-              </div>
-            </div>
-            <div className="flex space-x-6">
-              <button className="text-white text-lg hover:text-blue-600 transition">About</button>
-              <button className="text-white text-lg hover:text-blue-600 transition">Help</button>
-              <button className="text-white text-lg hover:text-blue-600 transition">Contact</button>
-            </div>
-          </header>
+import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 
-         
-    
-          {/* Main Content */}
-          <span className='text-2xl text-center font-semibold text-black bg-slate-400 p-3'>Admin's Profile</span>
-          <div className='flex-grow items-center justify-center bg-zinc-200'>
-            <div className='flex flex-col items-center mt-4'>
-                <form className='flex flex-grow flex-col w-1/3 text-xl font-semibold p-3'>
-                  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQkwCfbqC1hekX80g5sgKe2Gj36GXON4Glkaw&s" 
-                  alt="student image" srcset="" className='h-40 w-40 rounded-full ml-64' />
-                  <div className='mb-1 flex flex-col mt-2'>
-                    <label className='mb-2'>Username</label>
-                    <input type="text" className='p-2'/>
+export default function AdminP() {
+    return (
+        <div className="min-h-screen flex flex-col relative bg-gray-50">
+            {/* Left Arrow */}
+            <Link to="/previous-page" className="absolute left-6 top-1/2 transform -translate-y-1/2 bg-black text-white p-3 rounded-full hover:bg-gray-800 transition">
+                <FaArrowLeft size={30} />
+            </Link>
+
+            {/* Right Arrow */}
+            <Link to="/next-page" className="absolute right-6 top-1/2 transform -translate-y-1/2 bg-black text-white p-3 rounded-full hover:bg-gray-800 transition">
+                <FaArrowRight size={30} />
+            </Link>
+
+            {/* Header */}
+            <header className="sticky top-0 w-full bg-black py-3 shadow-md flex justify-between items-center px-8 z-10">
+                <div className="flex items-center">
+                    <Link to='/'>
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-7DjAZZLWBGma-Vm01k1yr2ErdOngnGFEJg&s"
+                            alt="University Logo" className="h-12 w-12 mr-4 rounded-full" />
+                    </Link>
+                    <div>
+                        <h1 className="text-xl font-bold text-white">TA Assignment System</h1>
+                        <p className="text-sm text-gray-300">University of Florida</p>
+                    </div>
+                </div>
+                <nav className="flex space-x-4">
+                    <Link to="/" className="text-white hover:text-blue-500 transition">About</Link>
+                    <Link to="/" className="text-white hover:text-blue-500 transition">Help</Link>
+                    <Link to="/" className="text-white hover:text-blue-500 transition">Contact</Link>
+                    <Link to="/" className="text-white hover:text-blue-500 transition">Logout</Link>
+                </nav>
+            </header>
+
+            {/* Profile Info */}
+            <section className="p-6 mx-auto mt-4 w-full max-w-7xl bg-gray-300 rounded-lg shadow-lg">
+                <h2 className="text-2xl text-center font-semibold text-gray-800">Admin's Profile</h2>
+                <p className="text-center text-black mt-2">Please keep your profile updated for smooth handling of the application processings for the positions and communication.</p>
+                <p className="text-center text-black mb-2">See the applications below to send/revoke offer letters.</p>
+
+                <div className="flex flex-col items-center">
+                    <form className="w-full space-y-4">
+                        <div className="flex justify-center">
+                            <img src="https://static.vecteezy.com/system/resources/thumbnails/007/469/004/small_2x/graduated-student-in-simple-flat-personal-profile-icon-or-symbol-people-concept-illustration-vector.jpg"
+                                alt="Student" className="h-32 w-32 rounded-full shadow-lg" />
+                        </div>
+                        <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+                            <div>
+                                <label className="block text-gray-700">Office location:</label>
+                                <input type="number" className="w-full px-4 py-2 border rounded-lg focus:border-blue-500" />
+                            </div>
+                            <div>
+                                <label className="block text-gray-700">E-mail:</label>
+                                <input type="number" className="w-full px-4 py-2 border rounded-lg focus:border-blue-500" />
+                            </div>
+                        </div>
+                        <button className="w-full bg-black text-white py-2 rounded-lg font-semibold hover:bg-gray-800 transition">Update Profile</button>
+                    </form>
+                </div>
+            </section>
+
+            {/* Course Application Table */}
+            <section className="mx-auto my-8 max-w-7xl p-6 bg-gray-300 rounded-lg shadow-lg">
+                <h3 className="text-xl font-semibold text-black mb-4 text-center ">Manage the applications</h3>
+                <div className='flex-grow items-center justify-center mb-4'>
+                <div className='flex flex-row gap-6 justify-center'>
+                  <select
+                        defaultValue={"DEFAULT"}
+                        id="countries"
+                        className="block w-1/5 rounded-lg border border-black-300 bg-black p-2.5 text-lg text-black focus:border-blue-500 focus:ring-blue-500 dark:border-black dark:bg-black dark:text-white dark:placeholder-black-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
+                      >
+                        <option value="DEFAULT" disabled>
+                          Choose a Course
+                        </option>
+                        <option value="5201">
+                          CIS5201: Distributed Operating Systems
+                        </option>
+                        <option value="5001">CIS5001: Embedded Systems</option>
+                        <option value="5510">
+                          CAP5510: Human Computer Interaction
+                        </option>
+                      </select>
+                      {/*Second dropdown*/}
+                      <select
+                        defaultValue={"DEFAULT"}
+                        id="countries"
+                        className="block w-1/5 rounded-lg border border-black  bg-black p-2.5 text-lg text-black  focus:border-blue-500 focus:ring-blue-500 dark:border-black  dark:bg-black  dark:text-white dark:placeholder-black dark:focus:border-blue-500 dark:focus:ring-blue-500"
+                      >
+                        <option value="DEFAULT" disabled>
+                          Choose a professor
+                        </option>
+                        <option value="AD">Dr. A</option>
+                        <option value="BS">Dr. B</option>
+                        <option value="FR">Dr. C</option>
+                        <option value="DE">Dr. D</option>
+                      </select>
                   </div>
-                  <div className='mb-1 flex flex-col mt-2'>
-                    <label className='mb-2'>Enter contact number</label>
-                    <input type="email" className='p-2'/>
                   </div>
-                </form>
-            </div>
-            <div className='flex flex-row gap-6 justify-center'>
-            <select
-                  defaultValue={"DEFAULT"}
-                  id="countries"
-                  className="block w-1/5 rounded-lg border border-black-300 bg-black p-2.5 text-lg text-black focus:border-blue-500 focus:ring-blue-500 dark:border-black dark:bg-black dark:text-white dark:placeholder-black-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
-                >
-                  <option value="DEFAULT" disabled>
-                    Choose a Course
-                  </option>
-                  <option value="5201">
-                    CIS5201: Distributed Operating Systems
-                  </option>
-                  <option value="5001">CIS5001: Embedded Systems</option>
-                  <option value="5510">
-                    CAP5510: Human Computer Interaction
-                  </option>
-                </select>
-                {/*Second dropdown*/}
-                <select
-                  defaultValue={"DEFAULT"}
-                  id="countries"
-                  className="block w-1/5 rounded-lg border border-black  bg-black p-2.5 text-lg text-black  focus:border-blue-500 focus:ring-blue-500 dark:border-black  dark:bg-black  dark:text-white dark:placeholder-black dark:focus:border-blue-500 dark:focus:ring-blue-500"
-                >
-                  <option value="DEFAULT" disabled>
-                    Choose a professor
-                  </option>
-                  <option value="AD">Dr. A</option>
-                  <option value="BS">Dr. B</option>
-                  <option value="FR">Dr. C</option>
-                  <option value="DE">Dr. D</option>
-                </select>
-            </div>
-            <div className='flex flex-col mt-4'>
-                <span className='text-2xl text-center font-semibold text-white bg-black p-3'>Managing the applications </span></div>
-            </div>
-            <div className="grid  grid-cols-8 grid-rows-1 gap-2 justify-start p-5 -mt-16 pt-16">
+                  <div className="grid  grid-cols-8 grid-rows-1 gap-2 justify-start p-5 -mt-16 pt-16">
             <div className="col-start-1 col-span-4 px-3 mt-6">
               <div className="max-w overflow-hidden rounded shadow-lg">
                 <div className="w-full">
@@ -129,7 +141,7 @@ export default function ProfessorLogin() {
                   className="block w-full rounded-lg border border-black bg-black p-2.5 text-l text-black focus:border-blue-500 focus:ring-blue-500 dark:border-black dark:bg-black dark:text-white dark:placeholder-white dark:focus:border-blue-500 dark:focus:ring-blue-500"
                 >
                   <option value="DEFAULT" disabled>
-                    Hours range
+                    Hours
                   </option>
                   <option value="AD">20+</option>
                   <option value="BS">15-20</option>
@@ -158,14 +170,14 @@ export default function ProfessorLogin() {
             </div>
 
             <div className="col-start-8 col-span-1 ml-5">
-              <div className="max-w-sm overflow-hidden rounded shadow-lg mt-6">
+              <div className="max-w-md overflow-hidden rounded shadow-lg mt-6">
                 <select
                   defaultValue={"DEFAULT"}
                   id="countries"
                   className="block w-full rounded-lg border border-black  bg-black p-2.5 text-l text-black  focus:border-blue-500 focus:ring-blue-500 dark:border-black  dark:bg-black  dark:text-white dark:placeholder-white  dark:focus:border-blue-500 dark:focus:ring-blue-500"
                 >
                   <option value="DEFAULT" disabled>
-                  Education level
+                  Program
                   </option>
 
                   <option value="BS">Masters</option>
@@ -192,142 +204,100 @@ export default function ProfessorLogin() {
             </div>
           </div>
 
-          <div className="overflow-x-auto">
-            <table className="min-w-full border-collapse border border-slate-400">
-              <thead className="bg-slate-400 font-semibold text-xl">
-                <tr>
-                  <th className="border border-slate-300 p-2">Student Name</th>
-                  <th className="border border-slate-300 p-2">Course level</th>
-                  <th className="border border-slate-300 p-2">
-                    GPA 
-                  </th>
-                  <th className="border border-slate-300 p-2">
-                    Working Hours (Per Week)
-                  </th>
-                  <th className="border border-slate-300 p-2">
-                    Student preference
-                  </th>
-                  <th className="border border-slate-300 p-2">
-                    Professor Decision
-                  </th>
+                <div className="overflow-x-auto">
+                    <table className="min-w-full border rounded-lg">
+                        <thead className="bg-black text-lg font-semibold text-white">
+                            <tr>
+                                <th className="border p-2"> Student Name</th>
+                                <th className="border p-2">Program</th>
+                                <th className="border p-2">Grade</th>
+                                <th className="border p-2">Hours per week</th>
+                                <th className="border p-2">Student preference</th>
+                                <th className="border p-2">Professor decision</th>
+                                <th className="border p-2">Student decision</th>
+                                <th className="border p-2">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr className="text-center text-black">
+                                <td className="border p-2">Student A</td>
+                                <td className="border p-2">Masters</td>
+                                <td className="border p-2">A</td>
+                                <td className="border p-2">30</td>
+                                <td className="border p-2">5</td>
+                                <td className='border p-2'>
+                                    <button
+                                      type="button"
+                                      className="focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800 content-center ml-10"
+                                    >
+                                      Accepted
+                                    </button>
+                                </td>
+                                <td className='border p-2'>
+                                    <button
+                                      type="button"
+                                      className="focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800 content-center ml-10"
+                                    >
+                                      Accepted
+                                    </button>
+                                </td>
+                                <td className='border p-2 flex flex-row'>
+                                    <button
+                                      type="button"
+                                      className="focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800 content-center ml-10"
+                                    >
+                                      Offer sent
+                                    </button>
+                                    <button
+                                      type="button"
+                                      className="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800 content-center ml-10"
+                                    >
+                                      Revoke
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                        <tbody>
+                            <tr className="text-center text-black">
+                                <td className="border p-2">Student A</td>
+                                <td className="border p-2">Masters</td>
+                                <td className="border p-2">A</td>
+                                <td className="border p-2">30</td>
+                                <td className="border p-2">5</td>
+                                <td className='border p-2'>
+                                    <button
+                                      type="button"
+                                      className="focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800 content-center ml-10"
+                                    >
+                                      Accepted
+                                    </button>
+                                </td>
+                                <td className='border p-2'>
+                                    <button
+                                      type="button"
+                                      className="focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800 content-center ml-10"
+                                    >
+                                      Accepted
+                                    </button>
+                                </td>
+                                <td className='border p-2 flex flex-row justify-center'>
+                                    <button
+                                      type="button"
+                                      className="focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800 content-center ml-10"
+                                    >
+                                      Offer sent
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
 
-                  <th className="border border-slate-300 p-2">
-                    Student Decision
-                  </th>
-                  <th className="border border-slate-300 p-2">
-                    Action
-                  </th>
-                </tr>
-              </thead>
-              <tbody className="text-center">
-                <tr>
-                  {/* Course Selection */}
-                  <td className="text-center border border-slate-500 p-2">
-                    Student A
-                  </td>
-                  <td className="border border-slate-500 p-2">Masters</td>
-                  {/* Grade Input */}
-                  <td className="border border-slate-500 p-2">3.96</td>
-
-                  {/* Working Hours*/}
-                  <td className="border border-slate-500 p-2">20</td>
-
-                  {/* Preference Level Buttons */}
-                  <td className="border border-slate-500">5</td>
-
-                  {/* Professor decision */}
-
-                  <td className="border border-slate-500">
-                    <button
-                      type="button"
-                      className="focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800 content-center ml-10"
-                    >
-                      Accepted
-                    </button>
-                  </td>
-
-                  {/* Student decision */}
-
-                  <td className="border border-slate-500 p-2">
-                    <button
-                        type="button"
-                        class="focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800 content-center ml-10"
-                      >
-                        Accepted
-                      </button>
-                  </td>
-                  
-                  {/* Admin action */}
-                  <td className="border border-slate-500 p-2">
-                    <div class="inline-flex rounded-md shadow-sm" role="group">
-                      <button
-                        type="button"
-                        class=" ml-8 focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800 content-center"
-                      >
-                        Send Offer
-                      </button>
-                    </div>
-                  </td>
-                </tr>
-              </tbody>
-
-              <tbody className="text-center" >
-              <tr>
-                  {/* Course Selection */}
-                  <td className="text-center border border-slate-500 p-2">
-                    Student A
-                  </td>
-                  <td className="border border-slate-500 p-2">Masters</td>
-                  {/* Grade Input */}
-                  <td className="border border-slate-500 p-2">3.96</td>
-
-                  {/* Working Hours*/}
-                  <td className="border border-slate-500 p-2">20</td>
-
-                  {/* Preference Level Buttons */}
-                  <td className="border border-slate-500">5</td>
-
-                  {/* Professor decision */}
-
-                  <td className="border border-slate-500">
-                    <button
-                      type="button"
-                      className="focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800 content-center ml-10"
-                    >
-                      Accepted
-                    </button>
-                  </td>
-
-                  {/* Student decision */}
-
-                  <td className="border border-slate-500 p-2">
-                    <button
-                        type="button"
-                        class="focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800 content-center ml-10"
-                      >
-                        Accepted
-                      </button>
-                  </td>
-                  
-                  {/* Admin action */}
-                  <td className="border border-slate-500 p-2">
-                    <div class="inline-flex rounded-md shadow-sm" role="group">
-                      <button
-                        type="button"
-                        class=" ml-8 focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-green-800 content-center"
-                      >
-                        Revoke
-                      </button>
-                    </div>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          {/* Footer */}
-          <footer className="w-full bg-black text-white py-3 text-center">
-            <p>© 2024 University of Florida. All rights reserved.</p>
-          </footer>
+            {/* Footer */}
+            <footer className="w-full bg-black text-white py-4 text-center">
+                <p>© 2024 University of Florida. All rights reserved.</p>
+            </footer>
         </div>
-      );
+    );
 }
