@@ -764,7 +764,7 @@ export default function StudentProfile() {
                                 {decision? (
                                 <div className="flex gap-2">
                                 <span className="px-4 py-2 bg-green-200 text-white rounded-md">
-                                    Applied
+                                    Accepted
                                 </span>
                                 <button
                                     onClick={() => setDecision(false)}
@@ -778,7 +778,7 @@ export default function StudentProfile() {
                                 onClick={() => setDecision(true)}
                                 className="px-4 py-2 bg-green-500 text-white rounded-md hover:bg-green-600 transition-colors"
                                 >
-                                Apply
+                                Accept
                                 </button>
                             )}
                                 </td>

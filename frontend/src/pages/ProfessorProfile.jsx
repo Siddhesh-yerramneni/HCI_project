@@ -21,6 +21,7 @@ export default function ProfessorProfile() {
   const [isEnabled,setIsEnabled] = useState(true)
   const [isAccepted,setIsAccepted] = useState(false);
   const [isVisible,setIsVisible] = useState(false);
+  const [isProfile,setIsProfile] = useState(false);
 
 
   useEffect(() => {
@@ -53,10 +54,20 @@ export default function ProfessorProfile() {
     }
   };
 
-  function handleToggle(){
+  function handleProfile(event){
+    event.preventDefault();
+    setIsEnabled(!isEnabled);
+    setIsAccepted(false);
+    setIsVisible(true);
+    setIsProfile(true);
+  }
+
+  function handleToggle(event){
+    event.preventDefault();
     setIsEnabled(!isEnabled);
     setIsVisible(true);
     setIsAccepted(true);
+    setIsProfile(false);
   }
     return (
         <div className="min-h-screen flex flex-col relative bg-gray-50">
@@ -178,7 +189,7 @@ export default function ProfessorProfile() {
                                 <input type="email" required className="w-full px-4 py-2 border rounded-lg focus:border-blue-500" />
                             </div>
                         </div>
-                        <button className="w-full bg-black text-white py-2 rounded-lg font-semibold hover:bg-gray-800 transition">Update Profile</button>
+                        <button type="submit" onClick={handleProfile} className="w-full bg-black text-white py-2 rounded-lg font-semibold hover:bg-gray-800 transition">Update Profile</button>
                     </form>
                 </div>
             </section>
@@ -495,7 +506,7 @@ export default function ProfessorProfile() {
                 </div>
             </section>
 
-            <Alert onClose={() => setIsVisible(false)} visible={isVisible} profile={false} application={false} acceptance={isAccepted}></Alert>
+            <Alert onClose={() => setIsVisible(false)} visible={isVisible} profile={isProfile} application={false} acceptance={isAccepted}></Alert>
 
             {/* Footer */}
             <footer className="w-full bg-black text-white py-4 text-center">

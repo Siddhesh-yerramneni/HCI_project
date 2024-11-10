@@ -9,10 +9,10 @@ export const Alert = (props) => {
 
     if (props.visible && props.profile) {
       setMainMessage('Successfully Updated');
-      setSubMessage('You have successfully updated your Profile.');
+      setSubMessage('Your decision is recorded');
     } else if (props.visible && props.application) {
       setMainMessage('Successfully Updated');
-      setSubMessage('Application has been sent');
+      setSubMessage('Application has been revoked');
     } else if (props.visible && props.acceptance) {
       setMainMessage('Successfully Updated');
       setSubMessage('Your decision is recorded');
