@@ -208,7 +208,7 @@ export default function ProfessorProfile() {
                                 <td className="border p-2">Yes </td>
                                 <td className="border p-2 text-blue-700">CAP5100_TA.pdf</td>
                                 <td className="border p-2 space-x-2 flex flex-row justify-around">
-                                    <button className="bg-green-500 text-white px-3 py-1 rounded-lg hover:bg-green-600">Posted</button>
+                                    <button className="bg-green-500 text-white px-3 py-1 rounded-lg hover:bg-green-600 cursor-not-allowed">Posted</button>
                                     <button className="bg-red-400 text-white px-3 py-1 rounded-lg hover:bg-red-500">Delete</button>
                                 </td>
                             </tr>
@@ -233,7 +233,7 @@ export default function ProfessorProfile() {
                                         <option>No</option>
                                     </select>
                                 </td>
-                                <td className="border p-2"><input type="text" className="w-full border rounded-lg px-2 py-1 focus:border-blue-500" /></td>
+                                <td className="border p-2"><input type="file" className="w-full border rounded-lg px-2 py-1 focus:border-blue-500" /></td>
                                 <td className="border p-2 space-x-2 flex flex-row justify-around">
                                     <button className="bg-green-500 text-white px-3 py-1 rounded-lg hover:bg-green-600">Post</button>
                                 </td>
@@ -399,8 +399,8 @@ export default function ProfessorProfile() {
                                 <td className="border border-slate-300 p-2 text-center">
                                         {isEnabled? (
                                         <div className="flex gap-2">
-                                        <span className="px-4 py-2 bg-green-200 text-white rounded-md">
-                                            Applied
+                                        <span className="px-4 py-2 bg-green-500 text-white rounded-md">
+                                            Accepted
                                         </span>
                                         <button
                                             onClick={() => handleToggle() }

@@ -171,11 +171,11 @@ export default function StudentProfile() {
             },
             {
               id: 2,
-              courseName: 'Course A',
+              courseName: 'Course B',
               professorName: 'Dr Cognition',
               taken: '',
               grade: '',
-              preference: 5,
+              preference: 0,
               comments: '',
               status: 'pending'
             }
@@ -626,7 +626,7 @@ export default function StudentProfile() {
                 <h2 className="text-2xl font-bold text-center mb-6">Apply for Available Courses</h2>
                 
                 <div className="overflow-x-auto">
-                    <table className="w-full bg-white shadow-md rounded-lg overflow-hidden">
+                    <table className="w-full bg-white shadow-md rounded-lg overflow-hidden border">
                     <thead className="bg-black text-white">
                         <tr>
                         <th className="px-4 py-3 text-left">Course Name</th>
@@ -635,6 +635,7 @@ export default function StudentProfile() {
                         <th className="px-4 py-3 text-left">Grade</th>
                         <th className="px-4 py-3 text-left">Preference</th>
                         <th className="px-4 py-3 text-left">Comments</th>
+                        <th className="px-4 py-3 text-left">Cover Letter</th>
                         <th className="px-4 py-3 text-left">Actions</th>
                         </tr>
                     </thead>
@@ -684,6 +685,13 @@ export default function StudentProfile() {
                             />
                             </td>
                             <td className="px-4 py-3">
+                            <input
+                                type="file"
+                                className="w-full p-2 border rounded-md"
+                                placeholder="Upload cover letter"
+                            />
+                            </td>
+                            <td className="px-4 py-3">
                             {course.status === 'applied' ? (
                                 <div className="flex gap-2">
                                 <span className="px-4 py-2 bg-green-200 text-white rounded-md">
@@ -717,7 +725,7 @@ export default function StudentProfile() {
 
             {/* Course Application Table */}
             <section className="mx-auto my-4 max-w-7xl p-6 bg-gray-200 rounded-lg shadow-lg">
-                <h3 className="text-xl font-semibold text-black mb-4 text-center ">Manage your application decisions</h3>
+                <h3 className="text-2xl font-bold text-black mb-6 text-center ">Manage your application decisions</h3>
                 {/* Checkbox and Sort Container */}
               <div className="flex justify-between w-full items-center mb-6">
                 {/* Checkboxes */}
@@ -756,11 +764,11 @@ export default function StudentProfile() {
                                 <td className="border p-2">Course A</td>
                                 <td className="border p-2">You are qualified to be a TA for this course, but I at least require 20 hours per week.
                                 </td>
-                                <td className="border border-slate-300 p-2 text-center">
-                                    <span className="bg-green-500 text-white py-2 px-4 rounded-lg">Accepted</span>
+                                <td className="border  p-2 text-center">
+                                    <span className=" text-black py-2 px-4">Accepted</span>
                                 </td>
                                 {/* Student Decision */}
-                                <td className="border border-slate-300 p-2 text-center">
+                                <td className="border  p-2 text-center">
                                 {decision? (
                                 <div className="flex gap-2">
                                 <span className="px-4 py-2 bg-green-200 text-white rounded-md">
@@ -778,7 +786,7 @@ export default function StudentProfile() {
                                 onClick={() => setDecision(true)}
                                 className="px-4 py-2 bg-green-500 text-white rounded-md hover:bg-green-600 transition-colors"
                                 >
-                                Apply
+                                Accept
                                 </button>
                             )}
                                 </td>
