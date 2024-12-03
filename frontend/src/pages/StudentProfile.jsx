@@ -772,7 +772,7 @@ export default function StudentProfile() {
                                 {decision? (
                                 <div className="flex gap-2">
                                 <span className="px-4 py-2 bg-green-200 text-white rounded-md">
-                                    Applied
+                                    Accepted
                                 </span>
                                 <button
                                     onClick={() => setDecision(false)}
